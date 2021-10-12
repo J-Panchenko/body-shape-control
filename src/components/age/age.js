@@ -2,12 +2,21 @@ import React from 'react';
 
 import './age.css';
 
-function Age() {
+function Age({ value, onAgeChange }) {
   return (
     <label htmlFor="age" className="parameter__item">
       <h2 className="subtitle">Возраст</h2>
       <span>лет</span>
-      <input type="text" id="age" value="" placeholder="0" />
+      <input
+        type="number"
+        id="age"
+        min={15}
+        max={100}
+        step={1}
+        defaultValue={value}
+        placeholder="0"
+        onChange={onAgeChange}
+      />
     </label>
   );
 }

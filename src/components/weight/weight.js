@@ -2,12 +2,21 @@ import React from 'react';
 
 import './weight.css';
 
-function Weight() {
+function Weight({ value, onWeightChange }) {
   return (
     <label htmlFor="weight" className="parameter__item">
       <h2 className="subtitle">Вес</h2>
       <span>кг</span>
-      <input type="text" id="weight" value="" placeholder="0" />
+      <input
+        type="number"
+        id="weight"
+        min={20}
+        max={500}
+        step={0.1}
+        value={value}
+        placeholder="0"
+        onChange={onWeightChange}
+      />
     </label>
   );
 }

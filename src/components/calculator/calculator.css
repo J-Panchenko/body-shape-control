@@ -1,7 +1,7 @@
 .calculator-form {
-  width: 500px;
-  margin: 0 auto 80px;
-  padding: 40px;
+  width: 600px;
+  margin: 0 auto 50px;
+  padding: 50px;
   background-color: #f8f8bd;
   border-radius: 20px;
 }
@@ -36,7 +36,9 @@
   border: 1px solid #90ae64;
   padding: 10px;
   min-height: 2em;
-  width: 121px;
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
 }
 
 .parameter__item input:hover {
@@ -54,6 +56,10 @@
   color: #2a2014;
   opacity: 0.5;
   text-align: center;
+}
+
+.parameter__item input:focus::placeholder {
+  opacity: 0;
 }
 
 .calculator-button {

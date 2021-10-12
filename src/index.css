@@ -1,3 +1,9 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Roboto', 'Oxygen',
@@ -6,10 +12,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: url("images/vegetables.webp");
+  background-repeat: no-repeat;
   background-size: cover;
   background-color: #e7bc3a;
-  background-position: top -100px center;
-  box-sizing: border-box;
+  background-position: top center;
+  min-height: 100vh;
 }
 
 code {
