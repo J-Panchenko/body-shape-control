@@ -9,6 +9,7 @@ function Height({ value, onHeightChange }) {
       <span>см</span>
       <input
         type="number"
+        required
         id="height"
         min={60}
         max={260}

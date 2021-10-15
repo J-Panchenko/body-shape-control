@@ -3,7 +3,7 @@ import ActivityItem from '../activity-item';
 
 import './activity.css';
 
-function Activity({ activities, onActivityChange }) {
+function Activity({ activities, activityValue, onActivityChange }) {
   const elements = activities.map((item) => {
     const { ...itemProps } = item;
     const { id } = item;
@@ -12,6 +12,7 @@ function Activity({ activities, onActivityChange }) {
       <li key={id}>
         <ActivityItem
           {...itemProps}
+          activityValue={activityValue}
           onActivityChange={onActivityChange}
         />
       </li>

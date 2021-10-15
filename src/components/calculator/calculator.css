@@ -122,3 +122,12 @@
 .button-reset:disabled::after {
   background-color: #888076;
 }
+
+.button-reset:active {
+  color: #534f4a;
+}
+
+.button-reset:active::before,
+.button-reset:active::after {
+  background-color: #534f4a;
+}

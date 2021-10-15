@@ -9,6 +9,7 @@ function Weight({ value, onWeightChange }) {
       <span>кг</span>
       <input
         type="number"
+        required
         id="weight"
         min={20}
         max={500}

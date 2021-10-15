@@ -5,19 +5,15 @@
 .gender-buttons {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  column-gap: 5px;
 }
 
 .gender__button {
   background-color: #f8f8bd;
-  border-radius: 5px 0 0 5px;
+  border-radius: 5px;
   border: 1px solid #90ae64;
   overflow: auto;
-}
-
-.gender__button + .gender__button {
-  border-left: none;
-  border-radius: 0 5px 5px 0;
-  margin-left: -1px;
+  position: relative;
 }
 
 .gender__button:hover {
@@ -35,7 +31,9 @@
 
 .gender__button label input {
   position:absolute;
-  top:-20px;
+  top: 30px;
+  right: 20px;
+  z-index: -1;
 }
 
 .gender__button input:checked + span {

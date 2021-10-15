@@ -11,18 +11,20 @@ import './calculator.css';
 import activities from '../../data/activities';
 import calculateMetabolism from '../../models/calculator';
 
+const initialState = {
+  gender: '',
+  age: '',
+  height: '',
+  weight: '',
+  activity: activities,
+  activityValue: '',
+  calculatorResult: 0,
+};
+
 export default class Calculator extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      gender: '',
-      age: '',
-      height: '',
-      weight: '',
-      activity: activities,
-      activityValue: 0,
-      calculatorResult: 0,
-    };
+    this.state = initialState;
   }
 
   onGenderChange = (event) => {
@@ -32,13 +34,9 @@ export default class Calculator extends Component {
   }
 
   onAgeChange = (event) => {
-    const ageValue = parseFloat(event.target.value);
-
-    if (ageValue >= 15 && ageValue <= 100) {
-      this.setState({
-        age: ageValue,
-      });
-    }
+    this.setState({
+      age: parseFloat(event.target.value),
+    });
   }
 
   onHeightChange = (event) => {
@@ -59,25 +57,33 @@ export default class Calculator extends Component {
     });
   }
 
-  onResult = (event) => {
-    event.preventDefault(); // TODO: Разобраться в каких случаях нужно
+  onCalculatorResult = (event) => {
+    event.preventDefault();
     const { ...state } = this.state;
     const metabolism = calculateMetabolism(state);
-
     this.setState({
       calculatorResult: metabolism,
     });
   }
 
+  onCalculatorReset = (event) => {
+    event.preventDefault();
+    this.setState(initialState);
+  }
+
   render() {
     const {
-      gender, age, height, weight, activity, activityValue, calculatorResult,
+      gender, age, height,
+      weight, activity, activityValue, calculatorResult,
     } = this.state;
 
     return (
       <div>
-        <form className="calculator-form">
-          <Gender value={gender} onGenderChange={this.onGenderChange} />
+        <form className="calculator-form" onSubmit={this.onCalculatorResult}>
+          <Gender
+            value={gender}
+            onGenderChange={this.onGenderChange}
+          />
           <div className="parameter">
             <Age value={age} onAgeChange={this.onAgeChange} />
             <Height value={height} onHeightChange={this.onHeightChange} />
@@ -89,15 +95,24 @@ export default class Calculator extends Component {
             onActivityChange={this.onActivityChange}
           />
           <div className="calculator-button">
-            <button type="submit" className="button button-submit" onClick={this.onResult}>
+            <button
+              type="submit"
+              className="button button-submit"
+              disabled={Object.is(this.state, initialState)}
+            >
               Рассчитать
             </button>
-            <button type="button" className="button button-reset" disabled>
+            <button
+              type="button"
+              className="button button-reset"
+              disabled={Object.is(this.state, initialState)}
+              onClick={this.onCalculatorReset}
+            >
               Очистить поля и расчёт
             </button>
           </div>
         </form>
-        {calculatorResult ? <CalculatorResult value={calculatorResult} /> : null}
+        {calculatorResult ? <CalculatorResult maintainWeight={calculatorResult} /> : null}
       </div>
     );
   }
