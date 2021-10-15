@@ -9,11 +9,12 @@ function Age({ value, onAgeChange }) {
       <span>лет</span>
       <input
         type="number"
+        required
         id="age"
         min={15}
         max={100}
         step={1}
-        defaultValue={value}
+        value={value}
         placeholder="0"
         onChange={onAgeChange}
       />
