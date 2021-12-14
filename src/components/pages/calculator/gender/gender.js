@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './gender.css';
-import user from '../../constants/user';
+import user from '../../../../constants/user';
 
 function Gender({ value, onGenderChange }) {
   return (

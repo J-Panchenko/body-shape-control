@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 
-import Activity from '../activity';
-import Age from '../age';
-import Gender from '../gender';
-import Height from '../height';
-import Weight from '../weight';
-import CalculatorResult from '../calculator-result';
+import Activity from './activity';
+import Age from './age';
+import Gender from './gender';
+import Height from './height';
+import Weight from './weight';
+import CalculatorResult from './calculator-result';
 
 import './calculator.css';
-import activities from '../../data/activities';
-import calculateMetabolism from '../../models/calculator';
+import activities from '../../../data/activities';
+import calculateMetabolism from '../../../models/calculator';
 
 const initialState = {
   gender: '',
@@ -78,7 +78,10 @@ export default class Calculator extends Component {
     } = this.state;
 
     return (
-      <div>
+      <section>
+        <h2 className="section-title">
+          Калькулятор суточной нормы калорий
+        </h2>
         <form className="calculator-form" onSubmit={this.onCalculatorResult}>
           <Gender
             value={gender}
@@ -113,7 +116,7 @@ export default class Calculator extends Component {
           </div>
         </form>
         {calculatorResult ? <CalculatorResult maintainWeight={calculatorResult} /> : null}
-      </div>
+      </section>
     );
   }
 }
