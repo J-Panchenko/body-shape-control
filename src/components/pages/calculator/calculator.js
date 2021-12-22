@@ -80,7 +80,7 @@ export default class Calculator extends Component {
     return (
       <section>
         <h2 className="section-title">
-          Калькулятор суточной нормы калорий
+          Calorie Calculator
         </h2>
         <form className="calculator-form" onSubmit={this.onCalculatorResult}>
           <Gender
@@ -103,7 +103,7 @@ export default class Calculator extends Component {
               className="button button-submit"
               disabled={Object.is(this.state, initialState)}
             >
-              Рассчитать
+              Calculate
             </button>
             <button
               type="button"
@@ -111,7 +111,7 @@ export default class Calculator extends Component {
               disabled={Object.is(this.state, initialState)}
               onClick={this.onCalculatorReset}
             >
-              Очистить поля и расчёт
+              Clear fields and calculation
             </button>
           </div>
         </form>

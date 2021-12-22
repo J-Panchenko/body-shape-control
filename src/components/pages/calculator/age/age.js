@@ -5,8 +5,8 @@ import './age.css';
 function Age({ value, onAgeChange }) {
   return (
     <label htmlFor="age" className="parameter__item">
-      <h2 className="subtitle">Возраст</h2>
-      <span>лет</span>
+      <h2 className="subtitle">Age</h2>
+      <span>years</span>
       <input
         type="number"
         required
