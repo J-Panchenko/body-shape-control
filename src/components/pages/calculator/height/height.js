@@ -5,8 +5,8 @@ import './height.css';
 function Height({ value, onHeightChange }) {
   return (
     <label htmlFor="height" className="parameter__item">
-      <h2 className="subtitle">Рост</h2>
-      <span>см</span>
+      <h2 className="subtitle">Height</h2>
+      <span>cm</span>
       <input
         type="number"
         required

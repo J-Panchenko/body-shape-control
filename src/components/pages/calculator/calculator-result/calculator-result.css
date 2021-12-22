@@ -16,20 +16,21 @@
   list-style: none;
   padding: 0;
   margin: 0;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 10px;
-  justify-content: space-between;
 }
 
 .calculator-result__item {
   margin-bottom: 30px;
-  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
   text-align: center;
+  vertical-align: middle;
 }
 
 .calculator-result__item:first-child {
-  width: 100%;
+  grid-column: 1/3;
 }
 
 .calculator-result__item:nth-last-child(2),
@@ -38,17 +39,10 @@
 }
 
 .calculator-result__item p {
-  text-align: left;
-  width: max-content;
   padding-left: 25px;
-  margin: 0 0 10px 0;
+  margin: 0 auto 10px auto;
   font-weight: bold;
   position: relative;
-}
-
-.calculator-result__item:first-child p {
-  text-align: center;
-  margin: 0 auto 10px auto;
 }
 
 .calculator-result__item p::before {
@@ -67,4 +61,5 @@
 
 .calorie-units {
   opacity: 0.5;
+  font-size: 12px;
 }

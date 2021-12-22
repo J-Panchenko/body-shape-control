@@ -6,7 +6,7 @@ import user from '../../../../constants/user';
 function Gender({ value, onGenderChange }) {
   return (
     <div className="gender">
-      <h2 className="subtitle">Пол</h2>
+      <h2 className="subtitle">Gender</h2>
       <div className="gender-buttons">
         <div className="gender__button">
           <label htmlFor="male-field">
@@ -19,7 +19,7 @@ function Gender({ value, onGenderChange }) {
               id="male-field"
               onChange={onGenderChange}
             />
-            <span>Мужчина</span>
+            <span>Male</span>
           </label>
         </div>
         <div className="gender__button">
@@ -33,7 +33,7 @@ function Gender({ value, onGenderChange }) {
               id="female-field"
               onChange={onGenderChange}
             />
-            <span>Женщина</span>
+            <span>Female</span>
           </label>
         </div>
       </div>
