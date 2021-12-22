@@ -5,8 +5,8 @@ import './weight.css';
 function Weight({ value, onWeightChange }) {
   return (
     <label htmlFor="weight" className="parameter__item">
-      <h2 className="subtitle">Вес</h2>
-      <span>кг</span>
+      <h2 className="subtitle">Weight</h2>
+      <span>kg</span>
       <input
         type="number"
         required
