@@ -2,7 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Layout from '../layout';
 import Calculator from '../pages/calculator';
-import DailyMealPlan from '../pages/meal';
+import DailyMealPlan from '../pages/meal-plan';
 import DailyWaterGoal from '../pages/water';
 import HomePage from '../pages/home';
 

@@ -1,6 +1,4 @@
-// import axios from 'axios';
-
-export default class FatsecretService {
+export default class NinjasService {
   apiBase = 'https://api.api-ninjas.com/v1/nutrition?query=';
 
   options = {
@@ -30,7 +28,6 @@ export default class FatsecretService {
 
   getResultsOfSearch = async (food) => {
     const res = await this.getResource(food);
-    // console.log(res);
     return res.map((item) => this.transformFood(item));
   };
 
@@ -43,7 +40,6 @@ export default class FatsecretService {
       fat: food.fat_total_g,
       carbohydrates: food.carbohydrates_total_g,
     };
-    console.log(result);
     return result;
   };
 }

@@ -1,0 +1,15 @@
+.meal-container {
+  width: 600px;
+  margin: 0 auto 50px;
+  padding: 50px;
+  background-color: #f8f8bd;
+  border-radius: 20px;
+}
+
+.section-text {
+  color: #2a2014;
+  font-weight: bold;
+  width: 100%;
+  padding: 0 5px 10px;
+  text-align: center;
+}
