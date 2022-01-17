@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './daily-meal-plan.css';
-import NinjasService from '../../../services/api-ninjas';
+import NinjasService from '../../../services/ninjas-service';
 import MealCalculator from './meal-calculator';
 
 class DailyMealPlan extends Component {

@@ -3,7 +3,7 @@ import { scroller } from 'react-scroll';
 
 import './calculator-result.css';
 
-import user from '../../../../constants/user';
+import user from '../../../../constants';
 
 export default class CalculatorResult extends Component {
   componentDidMount() {

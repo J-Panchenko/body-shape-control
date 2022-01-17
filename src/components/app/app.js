@@ -1,9 +1,9 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Layout from '../layout';
-import Calculator from '../pages/calculator';
+import Calculator from '../pages/calorie-calculator';
 import DailyMealPlan from '../pages/meal-plan';
-import DailyWaterGoal from '../pages/water';
+import DailyWaterGoal from '../pages/water-goal';
 import HomePage from '../pages/home';
 
 import './app.css';
