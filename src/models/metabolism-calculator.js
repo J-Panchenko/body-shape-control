@@ -1,8 +1,6 @@
 import user from '../constants/user';
 
-const calculateMetabolism = ({
-  gender, age, height, weight, activityValue,
-}) => {
+const calculateMetabolism = (gender, age, height, weight, activValue) => {
   let basicMetabolism;
   let ageValue;
   let heightValue;
@@ -22,7 +20,7 @@ const calculateMetabolism = ({
     basicMetabolism = user.female.basicMetabolismFactor + weightValue + heightValue - ageValue;
   }
 
-  return Math.round(basicMetabolism * parseFloat(activityValue));
+  return Math.round(basicMetabolism * parseFloat(activValue));
 };
 
 export default calculateMetabolism;

@@ -1,11 +1,3 @@
-.calculator-form {
-  width: 600px;
-  margin: 0 auto 50px;
-  padding: 50px;
-  background-color: #f8f8bd;
-  border-radius: 20px;
-}
-
 .parameter {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -64,7 +56,6 @@
 
 .calculator-button {
   display: flex;
-  justify-content: space-between;
 }
 
 .button {
@@ -73,10 +64,11 @@
   font-size: 20px;
   font-weight: bold; 
   padding: 15px 20px;
+  transition: 0.3s;
 }
 
 .button-submit {
-  background-color: #f8f8bd;
+  background-color: #f7f5a3;
   border: 2px solid #90ae64;
   border-radius: 10px;
   box-shadow: 0px 3px 10px 2px rgba(42, 32, 20, 0.2); 
@@ -86,7 +78,16 @@
   box-shadow: 0px 3px 5px 2px rgba(42, 32, 20, 0.2) inset;
 }
 
-.button-reset {
+.button-submit:hover {
+  background-color: #fcfaae;
+}
+
+.calculate-btn {
+  flex-grow: 1;
+  margin-right: 25px;
+}
+
+.button-clear {
   position: relative;
   border: none;
   background-color: transparent;
@@ -94,8 +95,8 @@
   padding-right: 10px;
 }
 
-.button-reset::before,
-.button-reset::after {
+.button-clear::before,
+.button-clear::after {
   content: '';
   position: absolute;
   width: 3px;
@@ -104,30 +105,40 @@
   top: 21px;
   left: 14px;
   background-color: #2a2014;
+  transition: 0.3s;
 }
 
-.button-reset::before {
+.button-clear::before {
   transform: rotate(45deg);
 }
 
-.button-reset::after {
+.button-clear::after {
   transform: rotate(-45deg);
 }
 
-.button-reset:disabled {
+.button-clear:disabled {
   color: #888076;
 }
 
-.button-reset:disabled::before,
-.button-reset:disabled::after {
+.button-clear:disabled::before,
+.button-clear:disabled::after {
   background-color: #888076;
 }
 
-.button-reset:active {
-  color: #534f4a;
+.button-clear:hover{
+  color: #63803a;
 }
 
-.button-reset:active::before,
-.button-reset:active::after {
-  background-color: #534f4a;
+.button-clear:hover::before,
+.button-clear:hover::after {
+  background-color: #63803a;
+}
+
+.button-clear:active {
+  color: #42321e;
+}
+
+.button-clear:active::before,
+.button-clear:active::after {
+  background-color: #1b140a;
 }

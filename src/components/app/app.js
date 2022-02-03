@@ -2,9 +2,9 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Layout from '../layout';
 import Calculator from '../pages/calorie-calculator';
-import DailyMealPlan from '../pages/meal-plan';
+import MealPlan from '../pages/meal-plan';
 import DailyWaterGoal from '../pages/water-goal';
-import HomePage from '../pages/home';
+import HomePage from '../pages/home-page';
 
 import './app.css';
 
@@ -13,9 +13,9 @@ function App() {
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<HomePage />} />
-        <Route path="calculator" element={<Calculator />} />
-        <Route path="meal-plan" element={<DailyMealPlan />} />
-        <Route path="water" element={<DailyWaterGoal />} />
+        <Route path="calorie-calculator" element={<Calculator />} />
+        <Route path="meal-plan" element={<MealPlan />} />
+        <Route path="water-goal" element={<DailyWaterGoal />} />
       </Route>
     </Routes>
   );

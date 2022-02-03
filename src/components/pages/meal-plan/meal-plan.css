@@ -1,0 +1,245 @@
+.section-text {
+  margin-bottom: 30px;
+  width: 100%;
+  padding: 0 5px 5px;
+  text-align: center;
+}
+
+.section-text:first-child {
+  margin-bottom: 5px;
+}
+
+.calories-goal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 30px;
+}
+
+.calories-goal span {
+  font-weight: bold;
+  padding: 5px;
+  width: 50%;
+}
+
+.calories-goal input {
+  background-color: #f7f7de;;
+  border-radius: 5px;
+  border: 1px solid #90ae64;
+  padding: 10px;
+  min-height: 2em;
+  width: 45%;
+  text-align: center;
+  font-size: 20px;
+}
+
+.calories-goal input:hover {
+  border: 1px solid #63803a;
+}
+
+.calories-goal input:focus {
+  outline: none;
+  box-shadow: 0px 0px 5px #90ae64;
+  border: 1px solid #90ae64;
+}
+
+.calories-goal input::placeholder {
+  color: #2a2014;
+  opacity: 0.5;
+  text-align: center;
+}
+
+.calories-goal input:focus::placeholder {
+  opacity: 0;
+}
+
+.nutrient-ratio {
+  margin-bottom: 30px;
+}
+
+.nutrient-ratio__text {
+  font-weight: bold;
+  padding: 5px;
+  margin-bottom: 15px;
+}
+
+.nutrient-ratio__text span {
+  font-weight: normal;
+  opacity: 0.5;
+}
+
+
+.nutrient-ratio__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nutrient-ratio__list li {
+  padding-left: 25px;
+  margin-bottom: 20px;
+}
+
+.nutrient-ratio__list li:last-child {
+  padding-left: 5px;
+}
+
+.nutrient-ratio__item input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.nutrient-ratio__item label {
+  font-weight: bold;
+  position: relative;
+}
+
+.nutrient-ratio__item label:hover {
+  color: #90ae64;
+}
+
+.nutrient-ratio__item label::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: -21px;
+  width: 14px;
+  height: 14px;
+  border: 2px solid #90ae64;
+  border-radius: 50%;
+}
+
+.nutrient-ratio__item input:checked + label::before {
+  background-color: #63803a;
+}
+
+.nutrient-ratio__item input:checked + label {
+  color: #63803a;
+}
+
+.nutrient-ratio__item p {
+  margin: 5px 0 0;
+  font-size: 0.9em;
+  opacity: 0.6;
+}
+
+
+.nutrient-ratio__item-hundle {
+  padding-left: 0;
+}
+
+.nutrient-ratio__item-hundle p {
+  padding: 0 20px 5px;
+  margin-bottom: 5px;
+}
+
+.nutrient-ratio__hundle {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
+  margin-bottom: 10px;
+}
+
+.nutrient-ratio__option {
+  text-align: right;
+}
+
+.nutrient-ratio__option span {
+  opacity: 0.6;
+  font-size: 0.8em;
+}
+
+.nutrient-ratio__hundle-input {
+  background-color: #f7f7de;;
+  border-radius: 5px;
+  border: 1px solid #90ae64;
+  padding: 10px;
+  min-height: 2em;
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+}
+
+.nutrient-ratio__hundle-input:hover {
+  border: 1px solid #63803a;
+}
+
+.nutrient-ratio__hundle-input:focus {
+  outline: none;
+  box-shadow: 0px 0px 5px #90ae64;
+  border: 1px solid #90ae64;
+}
+
+.nutrient-ratio__hundle-input::placeholder {
+  color: #2a2014;
+  opacity: 0.5;
+  text-align: center;
+}
+
+.nutrient-ratio__hundle-input:focus::placeholder {
+  opacity: 0;
+}
+
+.nutrient-ratio__item-hundle-input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.nutrient-ratio__item-hundle-label {
+  font-weight: bold;
+  position: relative;
+}
+
+.nutrient-ratio__item-hundle-label:hover {
+  color: #90ae64;
+}
+
+.nutrient-ratio__item-hundle-label::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 0px;
+  width: 14px;
+  height: 14px;
+  border: 2px solid #90ae64;
+  border-radius: 50%;
+}
+
+.nutrient-ratio__item-hundle-input:checked + .nutrient-ratio__item-hundle-label::before {
+  background-color: #63803a;
+}
+
+.nutrient-ratio__item-hundle-input:checked + .nutrient-ratio__item-hundle-label {
+  color: #63803a;
+}
+
+.nutrient-ratio__hundle-error {
+  color: #a60205;
+  font-style: italic;
+  font-size: 0.9em;
+}
+
+.meal-plan__btn {
+  border: 2px solid #90ae64;
+  border-radius: 10px;
+  box-shadow: 0px 3px 10px 2px rgb(42 32 20 / 20%); 
+  width: 100%;
+  margin-bottom: 30px;
+  background-color: #f7f5a3;
+}
+
+.meal-plan__btn:active {
+  box-shadow: 0px 3px 5px 2px rgba(42, 32, 20, 0.2) inset;
+}
+
+.meal-plan__btn-view {
+  background-color: #b0c95e;
+}
+
+.meal-plan__btn-view:hover {
+  background-color: #b9cf70;
+}

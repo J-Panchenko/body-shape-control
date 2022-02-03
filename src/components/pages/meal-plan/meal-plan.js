@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import './daily-meal-plan.css';
+import './meal-plan.css';
 import NinjasService from '../../../services/ninjas-service';
 import MealCalculator from './meal-calculator';
+import texts from '../../../data/texts';
 
-class DailyMealPlan extends Component {
+class MealPlan extends Component {
   service = new NinjasService();
 
   constructor() {
@@ -46,15 +47,10 @@ class DailyMealPlan extends Component {
 
     return (
       <section>
-        <h2 className="section-title">Your Daily Meal Plan</h2>
-        <div className="meal-container">
-          <p className="section-text">
-            One way to count your calories is by keeping a food diary
-            and writing down everything you eat.
-          </p>
-          <p className="section-text">
-            Use our Daily Meal Calculator to find out how much to eat per day! Let&#39;s start!
-          </p>
+        <h2 className="section-title visually-hidden">Your Daily Meal Plan</h2>
+        <div className="section-container">
+          <p className="section-text">{texts.prefaceMealPlan[0]}</p>
+          <p className="section-text">{texts.prefaceMealPlan[1]}</p>
           <MealCalculator />
 
           <form onSubmit={this.handleSubmit}>
@@ -97,4 +93,4 @@ class DailyMealPlan extends Component {
   }
 }
 
-export default DailyMealPlan;
+export default MealPlan;

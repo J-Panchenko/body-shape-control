@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { scroller } from 'react-scroll';
-
+import { connect } from 'react-redux';
+import { getUserCalories } from '../../../../actions';
 import './calculator-result.css';
+import texts from '../../../../data/texts';
+import MealPlan from '../../meal-plan';
 
-import user from '../../../../constants';
-
-export default class CalculatorResult extends Component {
+class CalculatorResult extends Component {
   componentDidMount() {
     scroller.scrollTo('calculator-result', {
       duration: 800,
@@ -15,54 +17,84 @@ export default class CalculatorResult extends Component {
   }
 
   render() {
-    const { maintainWeight } = this.props;
-    const normalWeightLoss = Math.round(maintainWeight * user.targetCalories.forNormalWeightLoss);
-    const extremeWeightLoss = Math.round(maintainWeight * user.targetCalories.forExtremeWeightLoss);
-    const normalWeightGain = Math.round(maintainWeight * user.targetCalories.forNormalWeightGain);
-    const extremeWeightGain = Math.round(maintainWeight * user.targetCalories.forExtremeWeightGain);
+    const {
+      onSelectedCalories, userSelectedCalories, maintainWeight,
+      normalWeightLoss, extremeWeightLoss, normalWeightGain, extremeWeightGain,
+    } = this.props;
     const units = ' kcal/day';
 
     return (
       <div className="calculator-result">
-        <h2 className="subtitle">Your Results</h2>
-        <ul className="calculator-result__list">
-          <li className="calculator-result__item">
-            <p>maintain weight</p>
-            <span className="calorie-value">
-              {maintainWeight}
-              <span className="calorie-units">{units}</span>
+        <div className="section-container">
+          <h2 className="subtitle">Results</h2>
+          <p className="calculator-result__result-msg">
+            {texts.caloriesResult[0]}
+            <span className="calculator-result__result-value">
+              {(!userSelectedCalories) ? 0 : userSelectedCalories}
             </span>
-          </li>
-          <li className="calculator-result__item">
-            <p>mild weight loss</p>
-            <span className="calorie-value">
-              {normalWeightLoss}
-              <span className="calorie-units">{units}</span>
-            </span>
-          </li>
-          <li className="calculator-result__item">
-            <p>rapid weight loss</p>
-            <span className="calorie-value">
-              {extremeWeightLoss}
-              <span className="calorie-units">{units}</span>
-            </span>
-          </li>
-          <li className="calculator-result__item">
-            <p>safely weight gain</p>
-            <span className="calorie-value">
-              {normalWeightGain}
-              <span className="calorie-units">{units}</span>
-            </span>
-          </li>
-          <li className="calculator-result__item">
-            <p>fast weight gain</p>
-            <span className="calorie-value">
-              {extremeWeightGain}
-              <span className="calorie-units">{units}</span>
-            </span>
-          </li>
-        </ul>
+            <span className="calorie-units">{units}</span>
+          </p>
+          <p className="calculator-result__help-msg">
+            {texts.caloriesResult[1]}
+            <Link to="/meal-plan" element={<MealPlan />}>{texts.caloriesResult[2]}</Link>
+          </p>
+          <ul className="calculator-result__list">
+            <li className="calculator-result__item">
+              <p>Maintain weight</p>
+              <button type="button" className="calorie-value" onClick={() => onSelectedCalories(maintainWeight)}>
+                {maintainWeight}
+                <span className="calorie-units">{units}</span>
+              </button>
+            </li>
+            <li className="calculator-result__item">
+              <p>Mild weight loss</p>
+              <button type="button" className="calorie-value" onClick={() => onSelectedCalories(normalWeightLoss)}>
+                {normalWeightLoss}
+                <span className="calorie-units">{units}</span>
+              </button>
+            </li>
+            <li className="calculator-result__item">
+              <p>Rapid weight loss</p>
+              <button type="button" className="calorie-value" onClick={() => onSelectedCalories(extremeWeightLoss)}>
+                {extremeWeightLoss}
+                <span className="calorie-units">{units}</span>
+              </button>
+            </li>
+            <li className="calculator-result__item">
+              <p>Safely weight gain</p>
+              <button type="button" className="calorie-value" onClick={() => onSelectedCalories(normalWeightGain)}>
+                {normalWeightGain}
+                <span className="calorie-units">{units}</span>
+              </button>
+            </li>
+            <li className="calculator-result__item">
+              <p>Fast weight gain</p>
+              <button type="button" className="calorie-value" onClick={() => onSelectedCalories(extremeWeightGain)}>
+                {extremeWeightGain}
+                <span className="calorie-units">{units}</span>
+              </button>
+            </li>
+          </ul>
+        </div>
       </div>
     );
   }
 }
+
+const mapStateToProps = ({
+  userCalories, maintainWeight, normalWeightLoss, extremeWeightLoss,
+  normalWeightGain, extremeWeightGain,
+}) => ({
+  userSelectedCalories: userCalories,
+  maintainWeight,
+  normalWeightLoss,
+  extremeWeightLoss,
+  normalWeightGain,
+  extremeWeightGain,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  onSelectedCalories: (value) => dispatch(getUserCalories(value)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(CalculatorResult);

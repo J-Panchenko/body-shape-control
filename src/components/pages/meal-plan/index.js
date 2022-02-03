@@ -1,3 +1,3 @@
-import DailyMealPlan from './daily-meal-plan';
+import MealPlan from './meal-plan';
 
-export default DailyMealPlan;
+export default MealPlan;
