@@ -9,7 +9,7 @@ export default class NinjasService {
   };
 
   onParsedString = (str) => {
-    const newString = str.split(' ').join('%20');
+    const newString = str.toLowerCase().split(' ').join('%20');
     return newString;
   };
 
@@ -35,7 +35,7 @@ export default class NinjasService {
     const result = {
       foodName: food.name,
       calories: food.calories,
-      servingSize: `${food.serving_size_g} g`,
+      servingSize: food.serving_size_g,
       protein: food.protein_g,
       fat: food.fat_total_g,
       carbohydrates: food.carbohydrates_total_g,

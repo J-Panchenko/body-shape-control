@@ -14,7 +14,7 @@ const WaterGoalResult = ({ waterML, waterLiters, glasses }) => {
 
   return (
     <div className="water-goal-result">
-      <h3 className="water-goal-result__subtitle">Your Daily Water Goal</h3>
+      <h3 className="section-subtitle">Your Daily Water Goal</h3>
       <p className="water-goal-result__text">
         {texts.waterGoalResult[0]}
         <span className="value">{waterML}</span>

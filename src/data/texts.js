@@ -6,12 +6,17 @@ const texts = {
   ],
   prefaceMealPlan: [
     'Tracking your food and drink intake can help you become more aware of your eating habits. It help you build healthy habits and reach your weight goals.',
-    'We recommend using our Daily Meal Calculator to find out how much to eat per day! Or you can just use the Food Diary if you know your protein, fat and carbs ratios. Let\'s start!',
+    'We recommend using our Daily Meal Calculator to find out how much to eat per day! Or you can just use the Meal Planner if you know your protein, fat and carbs ratios. Let\'s start!',
   ],
   caloriesGoal: 'How many calories do you plan to consume per day?',
   nutrientRatioText: [
     'What ratio of protein, fat and carbohydrates in the diet do you prefer?',
     '(protein/fat/carbs % of calories)',
+    'Use your own nutrient ratio (total - 100%) Percent of:',
+  ],
+  mealPlanner: [
+    'Your Corrent Meal Plan',
+    'What are you going to eat?',
   ],
   prefaceWaterGoal: [
     'The body constantly loses water throughout the day, mostly through urine and sweat but also from regular body functions like breathing. To prevent dehydration, you need to get plenty of water from drink and food every day.',
@@ -30,6 +35,18 @@ const texts = {
     'glassful',
     '(250ml)',
   ],
+  errorMessage: {
+    global: [
+      'Oops!',
+      'Something went wrong!',
+    ],
+    empty: '* Enter a value in the empty field, please.',
+    greater: '* The sum of the entered values is greater than 100%. Fix it!',
+    less: '* The sum of the entered values is less than 100%. Fix it!',
+    foodNoSearch: '* Nothing found. Try another name, please!',
+    foodNoCorrectly: '* Nothing found. Try to search in English, please!',
+
+  },
 };
 
 export default texts;

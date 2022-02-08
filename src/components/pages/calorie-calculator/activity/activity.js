@@ -21,7 +21,7 @@ function Activity({ activities, activityValue, onActivityChange }) {
 
   return (
     <div className="activity">
-      <h2 className="subtitle">Physical Activity</h2>
+      <h2 className="parameter-subtitle">Physical Activity</h2>
       <ul className="activity-list">
         {elements}
       </ul>

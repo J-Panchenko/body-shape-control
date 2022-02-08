@@ -132,7 +132,7 @@ class Calculator extends Component {
 }
 
 const mapStateToProps = ({
-  userAge, userWeight, userCalories, maintainWeight,
+  userData: { userAge, userWeight, userCalories }, weightTarget: { maintainWeight },
 }) => ({
   age: userAge,
   weight: userWeight,

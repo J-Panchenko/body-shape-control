@@ -20,25 +20,6 @@
   border-radius: 20px;
 }
 
-.title {
-  color: #2a2014;
-  font-size: 36px;
-  line-height: 42px;
-  text-align: center;
-  margin: 50px auto;
-  max-width: 400px;
-}
-
-.subtitle {
-  color: #2a2014;
-  font-size: 26px;
-  line-height: 28px;
-  text-align: left;
-  margin: 0 0 20px;
-  padding: 5px;
-  max-width: 400px;
-}
-
 .section-title {
   color: #2a2014;
   font-size: 30px;
@@ -56,4 +37,55 @@
   height: 1px;
   width: 1px;
   overflow: hidden;
+}
+
+.parameter-subtitle {
+  color: #2a2014;
+  font-size: 26px;
+  line-height: 28px;
+  text-align: left;
+  margin: 0 0 20px;
+  padding: 5px;
+  max-width: 400px;
+}
+
+.section-subtitle {
+  padding: 10px 5px;
+  margin: 0 0 15px;
+  color: #63803a;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+}
+
+.input {
+  background-color: #f7f7de;;
+  border-radius: 5px;
+  border: 1px solid #90ae64;
+  padding: 10px;
+  min-height: 2em;
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+}
+
+.input:hover {
+  border: 1px solid #63803a;
+}
+
+.input:focus {
+  outline: none;
+  box-shadow: 0px 0px 5px #90ae64;
+  border: 1px solid #90ae64;
+}
+
+.input::placeholder {
+  font-size: 20px;
+  color: #2a2014;
+  opacity: 0.5;
+  text-align: center;
+}
+
+.input:focus::placeholder {
+  opacity: 0;
 }

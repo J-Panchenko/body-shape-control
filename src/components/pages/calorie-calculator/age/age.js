@@ -3,10 +3,11 @@ import './age.css';
 
 const Age = ({ age, onChange }) => (
   <label htmlFor="age" className="parameter__item">
-    <h2 className="subtitle">Age</h2>
+    <h2 className="parameter-subtitle">Age</h2>
     <span>years</span>
     <input
       type="number"
+      className="input"
       required
       id="age"
       min={15}

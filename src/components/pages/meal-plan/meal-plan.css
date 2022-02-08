@@ -24,35 +24,8 @@
   width: 50%;
 }
 
-.calories-goal input {
-  background-color: #f7f7de;;
-  border-radius: 5px;
-  border: 1px solid #90ae64;
-  padding: 10px;
-  min-height: 2em;
+.calories-goal .input {
   width: 45%;
-  text-align: center;
-  font-size: 20px;
-}
-
-.calories-goal input:hover {
-  border: 1px solid #63803a;
-}
-
-.calories-goal input:focus {
-  outline: none;
-  box-shadow: 0px 0px 5px #90ae64;
-  border: 1px solid #90ae64;
-}
-
-.calories-goal input::placeholder {
-  color: #2a2014;
-  opacity: 0.5;
-  text-align: center;
-}
-
-.calories-goal input:focus::placeholder {
-  opacity: 0;
 }
 
 .nutrient-ratio {
@@ -152,38 +125,7 @@
   font-size: 0.8em;
 }
 
-.nutrient-ratio__hundle-input {
-  background-color: #f7f7de;;
-  border-radius: 5px;
-  border: 1px solid #90ae64;
-  padding: 10px;
-  min-height: 2em;
-  width: 100%;
-  text-align: center;
-  font-size: 20px;
-}
-
-.nutrient-ratio__hundle-input:hover {
-  border: 1px solid #63803a;
-}
-
-.nutrient-ratio__hundle-input:focus {
-  outline: none;
-  box-shadow: 0px 0px 5px #90ae64;
-  border: 1px solid #90ae64;
-}
-
-.nutrient-ratio__hundle-input::placeholder {
-  color: #2a2014;
-  opacity: 0.5;
-  text-align: center;
-}
-
-.nutrient-ratio__hundle-input:focus::placeholder {
-  opacity: 0;
-}
-
-.nutrient-ratio__item-hundle-input {
+.hundle-input {
   position: absolute;
   z-index: -1;
   opacity: 0;
@@ -209,11 +151,11 @@
   border-radius: 50%;
 }
 
-.nutrient-ratio__item-hundle-input:checked + .nutrient-ratio__item-hundle-label::before {
+.hundle-input:checked + .nutrient-ratio__item-hundle-label::before {
   background-color: #63803a;
 }
 
-.nutrient-ratio__item-hundle-input:checked + .nutrient-ratio__item-hundle-label {
+.hundle-input:checked + .nutrient-ratio__item-hundle-label {
   color: #63803a;
 }
 

@@ -6,7 +6,7 @@ import user from '../../../../constants/user';
 function Gender({ value, onGenderChange }) {
   return (
     <div className="gender">
-      <h2 className="subtitle">Gender</h2>
+      <h2 className="parameter-subtitle">Gender</h2>
       <div className="gender-buttons">
         <div className="gender__button">
           <label htmlFor="male-field">

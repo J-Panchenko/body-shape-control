@@ -8,6 +8,14 @@ const actionType = {
   extremeWeightLoss: 'EXTREME_WEIGHT_LOSS',
   normalWeightGain: 'NORMAL_WEIGHT_GAIN',
   extremeWeightGain: 'EXTREME_WEIGHT_GAIN',
+  productAddedToBreakfast: 'PRODUCT_ADDED_TO_BREAKFAST',
+  productAddedToLunch: 'PRODUCT_ADDED_TO_LUNCH',
+  productAddedToDinner: 'PRODUCT_ADDED_TO_DINNER',
+  productAddedToSnacks: 'PRODUCT_ADDED_TO_SNACKS',
+  productRemovedFromBreakfast: 'PRODUCT_REMOVED_FROM_BREAKFAST',
+  productRemovedFromLunch: 'PRODUCT_REMOVED_FROM_LUNCH',
+  productRemovedFromDinner: 'PRODUCT_REMOVED_FROM_DINNER',
+  productRemovedFromSnacks: 'PRODUCT_REMOVED_FROM_SNACKS',
 };
 
 export default actionType;

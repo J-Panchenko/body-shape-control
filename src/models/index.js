@@ -1,4 +1,5 @@
 import calculateMetabolism from './metabolism-calculator';
+import changeServingSize from './change-serving-size';
 import {
   normalWeightLoss,
   extremeWeightLoss,
@@ -13,6 +14,7 @@ import {
 
 export {
   calculateMetabolism,
+  changeServingSize,
   normalWeightLoss,
   extremeWeightLoss,
   normalWeightGain,

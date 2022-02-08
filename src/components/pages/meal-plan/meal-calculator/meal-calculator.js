@@ -2,19 +2,19 @@ import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import NutrientRatio from '../nutrient-ratio';
 import MealCalculatorResult from '../meal-calculator-result';
-import ratio from '../../../../data/nutrient-ratio';
-import texts from '../../../../data/texts';
+import { texts } from '../../../../data';
 import './meal-calculator.css';
 
 const MealCalculator = () => {
-  const [calories, setCalories] = useState(useSelector(({ userCalories }) => userCalories));
-  const [proteinPercent, setProteinPercent] = useState(null);
-  const [fatPercent, setFatPercent] = useState(null);
-  const [carboPercent, setCarboPercent] = useState(null);
-  const [userProteinPercent, setUserProteinPercent] = useState(null);
-  const [userFatPercent, setUserFatPercent] = useState(null);
-  const [userCarboPercent, setUserCarboPercent] = useState(null);
-  const [ratioId, setRatioId] = useState(null);
+  const userKcal = useSelector(({ userData: { userCalories } }) => userCalories);
+  const [calories, setCalories] = useState(userKcal);
+  const [proteinPercent, setProteinPercent] = useState('');
+  const [fatPercent, setFatPercent] = useState('');
+  const [carboPercent, setCarboPercent] = useState('');
+  const [userProteinPercent, setUserProteinPercent] = useState('');
+  const [userFatPercent, setUserFatPercent] = useState('');
+  const [userCarboPercent, setUserCarboPercent] = useState('');
+  const [ratioId, setRatioId] = useState('');
   const [error, setError] = useState(null);
   const [mealCalculatorResult, setMealCalculatorResult] = useState(false);
   const [textBtn, setTextBtn] = useState('Hide Calculator');
@@ -28,36 +28,30 @@ const MealCalculator = () => {
     setCarboPercent(carbohydrates);
   };
 
-  const totalUserRatio = (total) => {
-    if ((Number.isNaN(total))
-      || (((userProteinPercent && userFatPercent && userCarboPercent) === null)
-        && ratioId === 3)) {
-      return setError('* Enter a value in the empty field, please.');
+  const totalUserRatio = () => {
+    const total = Number(userProteinPercent + userFatPercent + userCarboPercent).toFixed(1);
+    if (Number.isNaN(userProteinPercent)
+      || Number.isNaN(userFatPercent)
+      || Number.isNaN(userCarboPercent)) {
+      return setError(texts.errorMessage.empty);
     }
-    if (total > 1 && ratioId === 3) {
-      return setError('* The sum of the entered values is greater than 100%. Fix it!');
+    if (total > 1) {
+      return setError(texts.errorMessage.greater);
     }
-    if (total < 1 && ratioId === 3) {
-      return setError('* The sum of the entered values is less than 100%. Fix it!');
+    if (total < 1) {
+      return setError(texts.errorMessage.less);
     }
-    return setError(null);
+    return (
+      setError(null),
+      onNutrientRatioChange(userProteinPercent, userFatPercent, userCarboPercent)
+    );
   };
 
   const setNutrientRatio = () => {
-    const total = userProteinPercent + userFatPercent + userCarboPercent;
-    totalUserRatio(total);
-    if (ratioId === 3 && total === 1) {
-      return onNutrientRatioChange(userProteinPercent, userFatPercent, userCarboPercent);
+    if (ratioId === 3) {
+      return totalUserRatio();
     }
-    return ratio.map((item) => {
-      const {
-        id, protein, fat, carbohydrates,
-      } = item;
-      if (ratioId === id) {
-        return onNutrientRatioChange(protein, fat, carbohydrates);
-      }
-      return null;
-    });
+    return null;
   };
 
   const handleSubmit = (e) => {
@@ -79,8 +73,13 @@ const MealCalculator = () => {
     return setCalories(parseCalories);
   };
 
-  const onRatioIdChange = (id) => {
-    setRatioId(id);
+  const onRatioIdChange = (id, prot, fat, carbs) => {
+    if (id === 3) {
+      return setRatioId(id);
+    }
+    return (
+      setRatioId(id),
+      onNutrientRatioChange(prot, fat, carbs));
   };
 
   const onProteinChange = (value) => {
@@ -115,6 +114,7 @@ const MealCalculator = () => {
               <span>{texts.caloriesGoal}</span>
               <input
                 type="number"
+                className="input"
                 id="calories-goal"
                 placeholder="2000 kcal/day"
                 value={calories}

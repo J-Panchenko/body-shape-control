@@ -3,10 +3,11 @@ import './weight.css';
 
 const Weight = ({ weight, onChange }) => (
   <label htmlFor="weight" className="parameter__item">
-    <h2 className="subtitle">Weight</h2>
+    <h2 className="parameter-subtitle">Weight</h2>
     <span>kg</span>
     <input
       type="number"
+      className="input"
       required
       id="weight"
       min={20}

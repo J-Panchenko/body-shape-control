@@ -1,10 +1,10 @@
-.daily-meal-goal__table {
+.table {
   width: 80%;
-  margin: 0 auto 50px;
+  margin: 0 auto 15px;
   border-collapse: collapse;
 }
 
-.daily-meal-goal__table-cap {
+.table-cap {
   color: #63803a;
   font-size: 20px;
   font-weight: bold;
@@ -12,24 +12,24 @@
   padding: 5px;
 }
 
-.daily-meal-goal__table-row {
+.table-row {
   text-align: center;
 }
 
-.daily-meal-goal__table-head {
+.table-head {
   border-bottom: 1px solid rgba(99, 128, 58, 0.3);
   padding: 0 5px 1px;
   width: 25%;
 }
 
-.daily-meal-goal__table-data {
+.table-data {
   padding: 10px 5px;
   color: #63803a;
   font-weight: bold;
   font-size: 20px;
 }
 
-.daily-meal-goal__table-data span {
+.table-data span {
   opacity: 0.5;
   font-size: 12px;
 }

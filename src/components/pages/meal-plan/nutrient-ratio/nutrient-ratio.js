@@ -1,7 +1,7 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
+// /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
+import { nutrientRatio as ratio, texts } from '../../../../data';
 import './nutrient-ratio.css';
-import ratio from '../../../../data/nutrient-ratio';
 
 const NutrientRatio = ({
   onRatioIdChange, onProteinChange, onFatChange, onCarboChange, error,
@@ -15,7 +15,7 @@ const NutrientRatio = ({
 
   const radioButtons = ratio.map((item) => {
     const {
-      id, label, description,
+      id, label, description, protein, fat, carbohydrates,
     } = item;
 
     return (
@@ -26,7 +26,7 @@ const NutrientRatio = ({
           name="nutrient-ratio"
           id={id}
           onChange={
-            () => onRatioIdChange(id)
+            () => onRatioIdChange(id, protein, fat, carbohydrates)
           }
         />
         <label htmlFor={id}>{label}</label>
@@ -44,18 +44,18 @@ const NutrientRatio = ({
           required
           name="nutrient-ratio"
           id={handleInputId}
-          className="nutrient-ratio__item-hundle-input"
+          className="hundle-input"
           onChange={() => onRatioIdChange(handleInputId)}
         />
-        <label htmlFor="3" className="nutrient-ratio__item-hundle-label">
-          <p>Use your own nutrient ratio (total - 100%) Percent of:</p>
+        <label htmlFor={handleInputId} className="nutrient-ratio__item-hundle-label">
+          <p>{texts.nutrientRatioText[2]}</p>
         </label>
         <div className="nutrient-ratio__hundle">
           <label htmlFor="protein-percent" className="nutrient-ratio__option">
             <input
               type="number"
               id="protein-percent"
-              className="nutrient-ratio__hundle-input"
+              className="input"
               placeholder="protein"
               min={0}
               max={100}
@@ -68,7 +68,7 @@ const NutrientRatio = ({
             <input
               type="number"
               id="fat-percent"
-              className="nutrient-ratio__hundle-input"
+              className="input"
               placeholder="fat"
               min={0}
               max={100}
@@ -81,7 +81,7 @@ const NutrientRatio = ({
             <input
               type="number"
               id="carbo-percent"
-              className="nutrient-ratio__hundle-input"
+              className="input"
               placeholder="carbs"
               min={0}
               max={100}

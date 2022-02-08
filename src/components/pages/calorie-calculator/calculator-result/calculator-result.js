@@ -26,7 +26,7 @@ class CalculatorResult extends Component {
     return (
       <div className="calculator-result">
         <div className="section-container">
-          <h2 className="subtitle">Results</h2>
+          <h2 className="parameter-subtitle">Results</h2>
           <p className="calculator-result__result-msg">
             {texts.caloriesResult[0]}
             <span className="calculator-result__result-value">
@@ -82,8 +82,10 @@ class CalculatorResult extends Component {
 }
 
 const mapStateToProps = ({
-  userCalories, maintainWeight, normalWeightLoss, extremeWeightLoss,
-  normalWeightGain, extremeWeightGain,
+  userData: { userCalories }, weightTarget: {
+    maintainWeight, normalWeightLoss, extremeWeightLoss,
+    normalWeightGain, extremeWeightGain,
+  },
 }) => ({
   userSelectedCalories: userCalories,
   maintainWeight,

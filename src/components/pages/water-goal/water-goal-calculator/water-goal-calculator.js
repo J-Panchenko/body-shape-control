@@ -6,8 +6,8 @@ import { texts } from '../../../../data';
 import './water-goal-calculator.css';
 
 const WaterGoalCalculator = () => {
-  const [age, setAge] = useState(useSelector(({ userAge }) => userAge));
-  const [weight, setWeight] = useState(useSelector(({ userWeight }) => userWeight));
+  const [age, setAge] = useState(useSelector(({ userData: { userAge } }) => userAge));
+  const [weight, setWeight] = useState(useSelector(({ userData: { userWeight } }) => userWeight));
   const [factor, setFactor] = useState(false);
   const [result, setResult] = useState(false);
   const [waterGoal, setWaterGoal] = useState(null);
@@ -53,10 +53,11 @@ const WaterGoalCalculator = () => {
         ? (
           <form className="water-form" onSubmit={onSubmit}>
             <label htmlFor="age" className="parameter__item">
-              <h2 className="subtitle">Age</h2>
+              <h2 className="parameter-subtitle">Age</h2>
               <span>years</span>
               <input
                 type="number"
+                className="input"
                 required
                 id="age"
                 min={15}
@@ -68,10 +69,11 @@ const WaterGoalCalculator = () => {
               />
             </label>
             <label htmlFor="weight" className="parameter__item">
-              <h2 className="subtitle">Weight</h2>
+              <h2 className="parameter-subtitle">Weight</h2>
               <span>kg</span>
               <input
                 type="number"
+                className="input"
                 required
                 id="weight"
                 min={20}
