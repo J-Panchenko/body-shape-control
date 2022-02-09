@@ -22,6 +22,7 @@ import {
   removeProductFromLunch,
   removeProductFromDinner,
   removeProductFromSnacks,
+  calculateSumOfNutrients,
 } from './meals';
 
 const onClearCalorieCalculator = () => ({
@@ -46,4 +47,5 @@ export {
   removeProductFromLunch,
   removeProductFromDinner,
   removeProductFromSnacks,
+  calculateSumOfNutrients,
 };

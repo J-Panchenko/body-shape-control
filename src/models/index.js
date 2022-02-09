@@ -11,6 +11,7 @@ import {
   getWaterGoalInLiters,
   getGlassesOfWater,
 } from './water-goal-calculators';
+import sumOfMealNutrients from './sum-of-meals-nutrients';
 
 export {
   calculateMetabolism,
@@ -22,4 +23,5 @@ export {
   getWaterGoalInML,
   getWaterGoalInLiters,
   getGlassesOfWater,
+  sumOfMealNutrients,
 };

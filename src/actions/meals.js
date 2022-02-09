@@ -40,6 +40,10 @@ const removeProductFromSnacks = (productId) => ({
   productId,
 });
 
+const calculateSumOfNutrients = () => ({
+  type: actionType.usersCurrentSumOfNutrient,
+});
+
 export {
   addProductToBreakfast,
   addProductToLunch,
@@ -49,4 +53,5 @@ export {
   removeProductFromLunch,
   removeProductFromDinner,
   removeProductFromSnacks,
+  calculateSumOfNutrients,
 };

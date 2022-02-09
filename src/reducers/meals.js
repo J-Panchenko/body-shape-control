@@ -1,12 +1,25 @@
 import { actionType } from '../constants';
+import { sumOfMealNutrients } from '../models';
 
-const deleteProduct = (meal, productId) => {
-  const productIndex = meal.findIndex(({ id }) => id === productId);
+const deleteProduct = (products, productId) => {
+  const productIndex = products.findIndex(({ id }) => id === productId);
   const newList = [
-    ...meal.slice(0, productIndex),
-    ...meal.slice(productIndex + 1),
+    ...products.slice(0, productIndex),
+    ...products.slice(productIndex + 1),
   ];
   return newList;
+};
+
+const calculateSumOfNutrients = (state) => {
+  const meals = [state.breakfast, state.lunch, state.dinner, state.snacks];
+  const carbs = Math.round(sumOfMealNutrients(meals, 'carbs'));
+  const protein = Math.round(sumOfMealNutrients(meals, 'protein'));
+  const fat = Math.round(sumOfMealNutrients(meals, 'fat'));
+  const kcal = Math.round(sumOfMealNutrients(meals, 'kcal'));
+
+  return {
+    carbs, protein, fat, kcal,
+  };
 };
 
 const updateMeals = (state, action) => {
@@ -16,6 +29,7 @@ const updateMeals = (state, action) => {
       lunch: [],
       dinner: [],
       snacks: [],
+      currentSum: {},
     };
   }
 
@@ -59,6 +73,11 @@ const updateMeals = (state, action) => {
       return {
         ...state.meals,
         snacks: deleteProduct(state.meals.snacks, action.productId),
+      };
+    case actionType.usersCurrentSumOfNutrient:
+      return {
+        ...state.meals,
+        currentSum: calculateSumOfNutrients(state.meals),
       };
     default:
       return state.meals;

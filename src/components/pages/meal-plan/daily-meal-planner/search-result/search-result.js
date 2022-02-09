@@ -8,34 +8,42 @@ import { addProductToBreakfast } from '../../../../../actions';
 const SearchResult = ({
   foodName, carbohydrates, proteins, fats, calories, servingSize,
 }) => {
-  const [kcal, setKcal] = useState(0);
-  const [protein, setProtein] = useState(0);
-  const [fat, setFat] = useState(0);
-  const [carbs, setCarbs] = useState(0);
-  const [portion, setPortion] = useState(0);
-
+  const [searchResult, setSearchResult] = useState({
+    carbs: 0,
+    protein: 0,
+    fat: 0,
+    kcal: 0,
+    portion: 0,
+  });
   const dispatch = useDispatch();
 
   useEffect(() => {
-    setPortion(servingSize);
-    setKcal(calories);
-    setCarbs(carbohydrates);
-    setProtein(proteins);
-    setFat(fats);
-  }, [foodName, carbohydrates, proteins, fats, calories, servingSize]);
+    setSearchResult({
+      carbs: carbohydrates,
+      protein: proteins,
+      fat: fats,
+      kcal: calories,
+      portion: servingSize,
+    });
+  }, [carbohydrates, proteins, fats, calories, servingSize]);
 
   const onChangePortion = (e) => {
-    const endPortion = e.target.value;
-    setKcal(changeServingSize(endPortion, calories));
-    setCarbs(changeServingSize(endPortion, carbohydrates));
-    setProtein(changeServingSize(endPortion, proteins));
-    setFat(changeServingSize(endPortion, fats));
-    setPortion(endPortion);
+    const endPortion = Number(e.target.value);
+    setSearchResult({
+      carbs: changeServingSize(endPortion, carbohydrates),
+      protein: changeServingSize(endPortion, proteins),
+      fat: changeServingSize(endPortion, fats),
+      kcal: changeServingSize(endPortion, calories),
+      portion: endPortion,
+    });
   };
 
-  const id = portion + kcal + Math.random();
+  const {
+    carbs, protein, fat, kcal, portion,
+  } = searchResult;
+  const id = Math.floor(Math.random() * 115) + 2;
   const addedProduct = {
-    foodName, carbs, protein, fat, kcal, portion, id,
+    id, foodName, carbs, protein, fat, kcal, portion,
   };
 
   return (

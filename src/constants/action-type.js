@@ -16,6 +16,7 @@ const actionType = {
   productRemovedFromLunch: 'PRODUCT_REMOVED_FROM_LUNCH',
   productRemovedFromDinner: 'PRODUCT_REMOVED_FROM_DINNER',
   productRemovedFromSnacks: 'PRODUCT_REMOVED_FROM_SNACKS',
+  usersCurrentSumOfNutrient: 'USERS_CURRENT_SUM_OF_NUTRIENTS_SUCCESS',
 };
 
 export default actionType;
