@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { changeServingSize } from '../../../../../models';
-import imgBasket from '../../../../../images/basket.svg';
+import imgAdd from '../../../../../images/add.svg';
 import './search-result.css';
 import { addProductToBreakfast } from '../../../../../actions';
 
@@ -85,7 +85,7 @@ const SearchResult = ({
               className="add-btn"
               onClick={() => dispatch(addProductToBreakfast(addedProduct))}
             >
-              <img src={imgBasket} width="30px" height="30px" alt="Add" />
+              <img src={imgAdd} width="30px" height="30px" alt="Add" />
             </button>
           </td>
         </tr>

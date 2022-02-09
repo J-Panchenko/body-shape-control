@@ -1,0 +1,9 @@
+.data-remove .remove-btn:hover img {
+  width: 28px;
+  height: 28px;
+}
+
+.data-remove .remove-btn:active img {
+  width: 25px;
+  height: 25px;
+}

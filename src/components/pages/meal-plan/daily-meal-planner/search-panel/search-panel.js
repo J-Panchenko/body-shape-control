@@ -106,7 +106,7 @@ const SearchPanel = ({ getFood }) => {
           className="search-btn"
           onClick={onClick}
         >
-          <img src={imgSearch} width="42px" height="42px" alt="Search" />
+          <img src={imgSearch} width="37px" height="37px" alt="Search" />
         </button>
       </form>
       {(view) ? result : null}

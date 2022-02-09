@@ -100,10 +100,10 @@
 
 .data-add .add-btn:hover img,
 .data-remove .remove-btn:hover img {
-  filter: drop-shadow(0 0 0.6em #d8a629);
+  filter: drop-shadow(0 0 0.6em #ddb85a);
 }
 
 .data-add .add-btn:active img,
 .data-remove .remove-btn:active img {
-  filter: drop-shadow(0 0 0.6em #63803a);
+  filter: drop-shadow(0 0 0.6em #b0c95e);
 }

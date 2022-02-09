@@ -11,6 +11,7 @@
   width: 90%;
   margin: 0 auto 15px;
   display: flex;
+  flex-basis: 2em;
   justify-content: center;
 }
 
@@ -22,7 +23,8 @@
 .search-btn {
   display: block;
   width: 10%;
-  padding: 0;
+  height: 3em;
+  padding-top: 2px;
   border: none;
   background-color: #f8f8bd;
 }
@@ -32,11 +34,15 @@
 }
 
 .search-btn:hover img {
-  filter: drop-shadow(0 0 0.75rem #d8a629);
+  width: 40px;
+  height: 40px;
+  filter: drop-shadow(0 0 0.75rem #ddb85a);
 }
 
 .search-btn:active img {
-  filter: drop-shadow(0 0 0.75rem #63803a);
+  filter: drop-shadow(0 0 0.75rem #b0c95e);
+  width: 37px;
+  height: 37px;
 }
 
 .search-panel .table {
