@@ -1,4 +1,20 @@
 const texts = {
+  homePage: {
+    introduction: 'Counting calories all the time is not necessary, but in the beginning, it may help to determine how many calories are in the foods and drinks you consume regularly.',
+    calories: {
+      link: 'See Calorie Calculator',
+      text: ' to determine how many calories a day you need to various weight goals based on your age, sex, height, weight, and physical activity level. Then click on the "Calculate" to see recommended daily amounts calories.',
+    },
+    meals: {
+      link: 'See Daily Meal Plan',
+      text: ' to learn how many calories you are taking in, write down the foods you eat and the beverages you drink. Be sure to use the calculator to determine the nutrient ratio for your goals. Focus on its results when you make up your daily diet.',
+    },
+    water: {
+      text: 'Lastly, don\'t forget about the water balance. Find out how much fluid you need! ',
+      link: 'See Water Goal Calculator.',
+    },
+    conclusion: 'Made with love...',
+  },
   caloriesResult: [
     'Your choice: ',
     'Select one of these options to use this number of calories in the Daily Meal Calculator on',

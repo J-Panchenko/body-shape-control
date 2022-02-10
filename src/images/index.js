@@ -3,6 +3,7 @@ import imgChange from './change.svg';
 import imgSave from './save.svg';
 import imgRemove from './garbage.svg';
 import imgSearch from './search.svg';
+import imgHeart from './heart.svg';
 
 export {
   imgAdd,
@@ -10,4 +11,5 @@ export {
   imgSave,
   imgRemove,
   imgSearch,
+  imgHeart,
 };
