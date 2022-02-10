@@ -5,6 +5,7 @@
 }
 
 .meal__item-container {
+  margin-bottom: 15px;
   border: 2px solid #90ae64;
   border-radius: 10px;
   box-shadow: 0px 3px 10px 2px rgb(42 32 20 / 20%);

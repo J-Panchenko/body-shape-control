@@ -1,5 +1,5 @@
 import React from 'react';
-import imgRemove from '../../../../../../images/garbage.svg';
+import { imgRemove } from '../../../../../../../images';
 import './product-item.css';
 
 const ProductItem = (props) => {

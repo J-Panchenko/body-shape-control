@@ -1,6 +1,6 @@
 // /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
-import { nutrientRatio as ratio, texts } from '../../../../data';
+import { nutrientRatio as ratio, texts } from '../../../../../data';
 import './nutrient-ratio.css';
 
 const NutrientRatio = ({

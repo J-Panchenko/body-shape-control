@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { scroller } from 'react-scroll';
-import { energyValue } from '../../../../constants';
+import { energyValue } from '../../../../../constants';
 import './meal-calculator-result.css';
 
 const MealCalculatorResult = ({ ...props }) => {

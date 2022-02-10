@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-import NutrientRatio from '../nutrient-ratio';
-import MealCalculatorResult from '../meal-calculator-result';
+import NutrientRatio from './nutrient-ratio';
+import MealCalculatorResult from './meal-calculator-result';
 import { texts } from '../../../../data';
 import './meal-calculator.css';
 

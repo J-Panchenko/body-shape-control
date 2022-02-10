@@ -1,5 +1,5 @@
 import React from 'react';
-import ActivityItem from '../activity-item';
+import ActivityItem from './activity-item';
 
 import './activity.css';
 

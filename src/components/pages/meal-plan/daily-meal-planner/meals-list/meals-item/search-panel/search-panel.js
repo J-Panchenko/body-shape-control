@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
-import withNinjasService from '../../../../hoc';
+import withNinjasService from '../../../../../../hoc';
 import SearchResult from '../search-result';
-import { texts } from '../../../../../data';
-import imgSearch from '../../../../../images/search.svg';
+import Spinner from '../../../../../../spinner';
+import { texts } from '../../../../../../../data';
+import { imgSearch } from '../../../../../../../images';
 import './search-panel.css';
-import Spinner from '../../../../spinner';
 
 const errorMessage = {
   noSearch: <p className="error-message">{texts.errorMessage.foodNoSearch}</p>,
   noCorrectly: <p className="error-message">{texts.errorMessage.foodNoCorrectly}</p>,
 };
 
-const SearchPanel = ({ getFood }) => {
+const SearchPanel = ({ getFood, addFunction }) => {
   const [productSearch, setProductSearch] = useState('');
   const [food, setFood] = useState('');
   const [kcal, setKcal] = useState(0);
@@ -86,6 +86,7 @@ const SearchPanel = ({ getFood }) => {
         fats={fats}
         calories={kcal}
         servingSize={size}
+        addFunction={addFunction}
       />
     );
 

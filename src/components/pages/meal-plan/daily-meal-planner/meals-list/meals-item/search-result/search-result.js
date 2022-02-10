@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { changeServingSize } from '../../../../../models';
-import imgAdd from '../../../../../images/add.svg';
+import { changeServingSize } from '../../../../../../../models';
+import { imgAdd } from '../../../../../../../images';
 import './search-result.css';
-import { addProductToBreakfast, calculateSumOfNutrients } from '../../../../../actions';
+import { calculateSumOfNutrients } from '../../../../../../../actions';
 
 const SearchResult = ({
-  foodName, carbohydrates, proteins, fats, calories, servingSize,
+  foodName, carbohydrates, proteins, fats, calories, servingSize, addFunction,
 }) => {
   const [searchResult, setSearchResult] = useState({
     carbs: 0,
@@ -47,7 +47,7 @@ const SearchResult = ({
   };
 
   const onClick = () => {
-    dispatch(addProductToBreakfast(addedProduct));
+    dispatch(addFunction(addedProduct));
     dispatch(calculateSumOfNutrients());
   };
 

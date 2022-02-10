@@ -1,5 +1,4 @@
 import React from 'react';
-
 import './activity-item.css';
 
 function ActivityItem({

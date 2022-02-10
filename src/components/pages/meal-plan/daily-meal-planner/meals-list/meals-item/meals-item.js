@@ -1,17 +1,16 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { removeProductFromBreakfast, calculateSumOfNutrients } from '../../../../../../actions';
-import SearchPanel from '../../search-panel';
-import ProductItem from '../product-item/product-item';
-import imgAdd from '../../../../../../images/add.svg';
-import imgSetting from '../../../../../../images/setting.svg';
-import imgSave from '../../../../../../images/save.svg';
-import './breakfast.css';
+import { useDispatch } from 'react-redux';
+import { calculateSumOfNutrients } from '../../../../../../actions';
+import SearchPanel from './search-panel';
+import ProductItem from './product-item/product-item';
+import { imgAdd, imgChange, imgSave } from '../../../../../../images';
+import './meals-item.css';
 
-const Breakfast = () => {
+const MealsItem = ({
+  name, products, addFunction, removeFunction,
+}) => {
   const [viewList, setViewList] = useState(false);
   const [viewSearchPanel, setViewSearchPanel] = useState(true);
-  const products = useSelector((state) => state.meals.breakfast);
   const dispatch = useDispatch();
 
   const product = products.map((prod) => {
@@ -21,7 +20,7 @@ const Breakfast = () => {
     const productId = id;
 
     const onClick = () => {
-      dispatch(removeProductFromBreakfast(productId));
+      dispatch(removeFunction(productId));
       dispatch(calculateSumOfNutrients());
     };
 
@@ -46,7 +45,7 @@ const Breakfast = () => {
     setViewSearchPanel(false);
   };
 
-  const breakfastList = (
+  const itemList = (
     <>
       <div className="meals__item-button">
         <button
@@ -54,7 +53,7 @@ const Breakfast = () => {
           className={(viewSearchPanel) ? 'btn btn-setting active' : 'btn btn-setting'}
           onClick={() => setViewSearchPanel(true)}
         >
-          <img src={imgSetting} width="30px" height="30px" alt="Setting" />
+          <img src={imgChange} width="27px" height="27px" alt="Setting" />
         </button>
         <button
           type="button"
@@ -64,7 +63,7 @@ const Breakfast = () => {
           <img src={imgSave} width="30px" height="30px" alt="Setting" />
         </button>
       </div>
-      {(viewSearchPanel) ? <SearchPanel /> : null}
+      {(viewSearchPanel) ? <SearchPanel addFunction={addFunction} /> : null}
       <table className="table">
         <tbody className="table-body">
           {product}
@@ -90,13 +89,13 @@ const Breakfast = () => {
             alt="Add/Close button"
           />
         </button>
-        <h3 className="meals__item-title">Breakfast</h3>
+        <h3 className="meals__item-title">{name}</h3>
       </div>
       {
-        (viewList) ? breakfastList : null
+        (viewList) ? itemList : null
       }
     </div>
   );
 };
 
-export default Breakfast;
+export default MealsItem;

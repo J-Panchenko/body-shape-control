@@ -35,6 +35,12 @@ const texts = {
     'glassful',
     '(250ml)',
   ],
+  mealsName: {
+    breakfast: 'Breakfast',
+    lunch: 'Lunch',
+    dinner: 'Dinner',
+    snacks: 'Snacks',
+  },
   errorMessage: {
     global: [
       'Oops!',
