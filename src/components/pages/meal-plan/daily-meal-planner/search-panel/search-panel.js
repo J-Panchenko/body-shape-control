@@ -93,7 +93,7 @@ const SearchPanel = ({ getFood }) => {
 
   return (
     <div className="search-panel">
-      <form className="search-form" onSubmit={handleSubmit}>
+      <form className={(view) ? 'search-form' : 'search-form view'} onSubmit={handleSubmit}>
         <input
           type="text"
           className="input search-input"

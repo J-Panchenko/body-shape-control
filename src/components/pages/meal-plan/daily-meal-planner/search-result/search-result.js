@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { changeServingSize } from '../../../../../models';
 import imgAdd from '../../../../../images/add.svg';
 import './search-result.css';
-import { addProductToBreakfast } from '../../../../../actions';
+import { addProductToBreakfast, calculateSumOfNutrients } from '../../../../../actions';
 
 const SearchResult = ({
   foodName, carbohydrates, proteins, fats, calories, servingSize,
@@ -46,6 +46,11 @@ const SearchResult = ({
     id, foodName, carbs, protein, fat, kcal, portion,
   };
 
+  const onClick = () => {
+    dispatch(addProductToBreakfast(addedProduct));
+    dispatch(calculateSumOfNutrients());
+  };
+
   return (
     <table className="table">
       <tbody className="table-body">
@@ -83,7 +88,7 @@ const SearchResult = ({
             <button
               type="button"
               className="add-btn"
-              onClick={() => dispatch(addProductToBreakfast(addedProduct))}
+              onClick={() => onClick()}
             >
               <img src={imgAdd} width="30px" height="30px" alt="Add" />
             </button>

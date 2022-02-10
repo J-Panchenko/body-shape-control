@@ -1,5 +1,8 @@
 .meals__item .search-panel .table {
   width: 100%;
+  border-left: none;
+  border-right: none;
+  border-radius: 0;
 }
 
 .data-add .add-btn:hover img {
