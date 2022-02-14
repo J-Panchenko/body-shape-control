@@ -1,0 +1,56 @@
+.search-panel .error-message {
+  width: 85%;
+  height: 67.5px;
+  margin: 0 auto;
+  font-size: 1em;
+  font-style: italic;
+  color: #932916;
+  text-align: left;
+}
+
+.search-form {
+  width: 90%;
+  height: 50px;
+  margin: 15px auto;
+  display: flex;
+  vertical-align: middle;
+  justify-content: center;
+}
+
+.search-panel .view {
+  margin-bottom: 82.5px;
+}
+
+.search-panel .input {
+  width: 80%;
+  margin-right: 10px;
+}
+
+.search-btn {
+  display: block;
+  margin: auto 0;
+  width: 10%;
+  height: 40px;
+  border: none;
+  background-color: #fcfaae;
+}
+
+.search-btn img {
+  transition: all 0.3s;
+}
+
+.search-btn:hover img {
+  width: 40px;
+  height: 40px;
+  filter: drop-shadow(0 0 0.75rem #ddb85a);
+}
+
+.search-btn:active img {
+  filter: drop-shadow(0 0 0.75rem #b0c95e);
+  width: 37px;
+  height: 37px;
+}
+
+.search-panel .table {
+  width: 100%;
+}

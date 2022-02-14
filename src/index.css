@@ -1,3 +1,5 @@
+@import-normalize;
+
 *,
 *::after,
 *::before {
@@ -12,14 +14,18 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: url("images/vegetables.webp");
+  background-color: #ebc244;
   background-repeat: no-repeat;
-  background-size: cover;
-  background-color: #e7bc3a;
-  background-position: top center;
+  background-size: 100%;
+  background-position: top;
   min-height: 100vh;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+p {
+  margin: 0;
 }

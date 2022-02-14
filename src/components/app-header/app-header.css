@@ -1,8 +1,64 @@
-.title {
+.menu {
+  display: grid;
+  gap: 10px;
+  grid-template-areas: "home menu menu sigh";
+}
+
+.menu__link-home {
+  color: #63803a;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 24px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: block;
+  grid-area: home;
+  max-width: 150px;
+  position: relative;
+}
+
+.menu__link-home::after {
+  content: '';
+  position: absolute;
+  background-image: url(../../images/logo.svg);
+  width: 55px;
+  height: 55px;
+  top: 5px;
+  right: 25px;
+  transform: rotate(-20deg);
+  opacity: 0.9;
+}
+
+.menu__list {
+  list-style: none;
+  padding: 0;
+  margin: auto;
+  grid-area: menu;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.menu__link {
   color: #2a2014;
-  font-size: 36px;
-  line-height: 42px;
-  text-align: center;
-  margin: 50px auto 50px;
-  max-width: 400px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 18px;
+  line-height: 20px;
+  display: block;
+  padding: 15px;
+  transition: color .5s;
+}
+
+.menu__link:hover {
+  color: #63803a;
+}
+
+.active {
+  color: #63803a;
+  font-weight: 600;
+  filter: drop-shadow(0 5px 15px rgba(235, 255, 121, 0.774));
 }

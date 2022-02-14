@@ -1,24 +1,24 @@
 const activities = [
   {
-    id: 0, label: 'Базовый обмен веществ', description: 'Минимальное количество энергии, необходимое для обеспечения нормальной жизнедеятельности организма (без учёта физической активности)', value: 1,
+    id: 0, label: 'Basal Metabolic Rate (BMR)', description: 'The minimum amount of energy required to ensure the normal functioning of the body (excluding physical activity)', value: 1,
   },
   {
-    id: 1, label: 'Минимальная', description: 'Сидячая работа и нет физических нагрузок, минимальная активность в быту', value: 1.2,
+    id: 1, label: 'Sedentary', description: 'Sedentary work and no exercise, minimal activity at home', value: 1.2,
   },
   {
-    id: 2, label: 'Низкая', description: 'Нерегулярные тренировки до 3 раз в неделю, активность в быту', value: 1.375,
+    id: 2, label: 'Light', description: 'Irregular exercise 3 times/week, activity at home', value: 1.375,
   },
   {
-    id: 3, label: 'Средняя', description: 'Тренировки 3-5 раз в неделю, работа средней тяжести', value: 1.4625,
+    id: 3, label: 'Moderate', description: 'Exercise 3-5 times/week or work of average severity', value: 1.4625,
   },
   {
-    id: 4, label: 'Выше среднего', description: 'Интенсивные тренировки 4-5 раз в неделю', value: 1.55,
+    id: 4, label: 'Active', description: 'Daily exercise or intense exercise 4-5 times/week', value: 1.55,
   },
   {
-    id: 5, label: 'Высокая', description: 'Тренировки 6-7 раз в неделю', value: 1.6375,
+    id: 5, label: 'Very Active', description: 'Intense exercise 6-7 times/week', value: 1.6375,
   },
   {
-    id: 6, label: 'Очень высокая', description: 'Больше 6 тренировок в неделю и физическая работа', value: 1.9,
+    id: 6, label: 'Extra Active', description: 'Very intense exercise daily and physical job', value: 1.9,
   },
 ];
 

@@ -1,0 +1,16 @@
+.meals__item .search-panel .table {
+  width: 100%;
+  border-left: none;
+  border-right: none;
+  border-radius: 0;
+}
+
+.data-add .add-btn:hover img {
+  width: 35px;
+  height: 35px;
+}
+
+.data-add .add-btn:active img {
+  width: 30px;
+  height: 30px;
+}

@@ -15,10 +15,10 @@ const user = {
     basicMetabolismFactor: 655.1,
   },
   targetCalories: {
-    forNormalWeightLoss: 0.83,
-    forExtremeWeightLoss: 0.74,
-    forNormalWeightGain: 1.2,
-    forExtremeWeightGain: 1.36,
+    forNormalWeightLoss: 0.85,
+    forExtremeWeightLoss: 0.77,
+    forNormalWeightGain: 1.15,
+    forExtremeWeightGain: 1.25,
   },
 };
 
