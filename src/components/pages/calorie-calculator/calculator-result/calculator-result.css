@@ -1,0 +1,116 @@
+.calculator-result {
+  margin-top: -100px;
+}
+
+.calculator-result .section-container {
+  position: relative;
+}
+
+.calculator-result h2 {
+  margin: 0 0 20px;
+}
+
+.calculator-result__result-msg {
+  position: absolute;
+  top: 55px;
+  right: 50px;
+  margin: 0;
+  padding: 5px;
+  text-align: right;
+  font-weight: bold;
+}
+
+.calculator-result__result-value {
+  font-weight: bold;
+  font-size: 20px;
+  color: #63803a;
+}
+
+.calculator-result__help-msg {
+  margin: 0 auto 30px;
+  padding: 5px;
+  width: 80%;
+  text-align: center;
+}
+
+.calculator-result__help-msg a {
+  text-decoration: none;
+  color: #63803a;
+  font-weight: bold;
+}
+
+.calculator-result__help-msg a:hover {
+  color: #9cc465;
+}
+
+.calculator-result__help-msg a:active{
+  color: rgba(99, 128, 58, 0.6);
+}
+
+.calculator-result__list {
+  color: #2a2014;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.calculator-result__item {
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  vertical-align: middle;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.calculator-result__item:first-child {
+  grid-column: 1/3;
+}
+
+.calculator-result__item:nth-last-child(2),
+.calculator-result__item:last-child {
+  margin-bottom: 0;
+}
+
+.calculator-result__item p {
+  padding-left: 25px;
+  margin: 0 auto 10px auto;
+  font-weight: bold;
+  position: relative;
+}
+
+.calculator-result__item p::before {
+  content: '\2713';
+  position: absolute;
+  color: #63803a;
+  font-size: 24px;
+  top: -5px;
+  left: 2px;
+}
+
+.calorie-value {
+  font-weight: bold;
+  color: #63803a;
+  background-color: #f7f5a3;
+  border: 2px solid #90ae64;
+  border-radius: 10px;
+  box-shadow: 0px 3px 10px 2px rgba(42, 32, 20, 0.2); 
+  font-family: inherit;
+  font-size: 20px;
+  font-weight: bold; 
+  padding: 15px 50px;
+}
+
+.calorie-value:active {
+  box-shadow: 0px 3px 5px 2px rgba(42, 32, 20, 0.2) inset;
+}
+
+.calorie-units {
+  color: #63803a;
+  opacity: 0.5;
+  font-size: 12px;
+}

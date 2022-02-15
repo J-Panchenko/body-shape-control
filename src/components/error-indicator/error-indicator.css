@@ -1,0 +1,25 @@
+.error-indicator {
+  margin: 0 auto;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #b60004;
+}
+
+.error-indicator img {
+  width: 300px;
+}
+
+.error-message {
+  text-align: center;
+  font-size: 1.7rem;
+}
+
+.error-message span {
+  display: block;
+}
+
+.error-message .boom {
+  font-size: 2rem;
+}

@@ -1,0 +1,43 @@
+.gender {
+  margin-bottom: 30px;
+}
+
+.gender-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 5px;
+}
+
+.gender__button {
+  background-color: #f8f8bd;
+  border-radius: 5px;
+  border: 1px solid #90ae64;
+  overflow: auto;
+  position: relative;
+  transition: 0.3s;
+}
+
+.gender__button:hover {
+  background-color: #90ae64;
+  border-color: #63803a;
+}
+
+.gender__button label span {
+  color: #2a2014;
+  text-align: center;
+  font-weight: bold;
+  padding: 15px 0px;
+  display: block;
+}
+
+.gender__button label input {
+  position:absolute;
+  top: 30px;
+  right: 20px;
+  z-index: -1;
+}
+
+.gender__button input:checked + span {
+  background-color:#63803a;
+  color: #f8f8bd;
+}
