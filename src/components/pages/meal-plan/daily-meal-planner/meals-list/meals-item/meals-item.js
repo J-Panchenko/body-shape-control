@@ -6,12 +6,13 @@ import ProductItem from './product-item/product-item';
 import { imgAdd, imgChange, imgSave } from '../../../../../../images';
 import './meals-item.css';
 
-const MealsItem = ({
-  name, products, addFunction, removeFunction,
-}) => {
+function MealsItem(props) {
   const [viewList, setViewList] = useState(false);
   const [viewSearchPanel, setViewSearchPanel] = useState(true);
   const dispatch = useDispatch();
+  const {
+    name, products, addFunction, removeFunction,
+  } = props;
 
   const product = products.map((prod) => {
     const {
@@ -96,6 +97,6 @@ const MealsItem = ({
       }
     </div>
   );
-};
+}
 
 export default MealsItem;

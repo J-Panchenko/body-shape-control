@@ -5,7 +5,7 @@ import MealCalculatorResult from './meal-calculator-result';
 import { texts } from '../../../../data';
 import './meal-calculator.css';
 
-const MealCalculator = () => {
+function MealCalculator() {
   const userKcal = useSelector(({ userData: { userCalories } }) => userCalories);
   const [calories, setCalories] = useState(userKcal);
   const [proteinPercent, setProteinPercent] = useState('');
@@ -165,6 +165,6 @@ const MealCalculator = () => {
         : null}
     </div>
   );
-};
+}
 
 export default MealCalculator;

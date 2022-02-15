@@ -3,7 +3,7 @@ import { scroller } from 'react-scroll';
 import { texts } from '../../../../data';
 import './water-goal-result.css';
 
-const WaterGoalResult = ({ waterML, waterLiters, glasses }) => {
+function WaterGoalResult({ waterML, waterLiters, glasses }) {
   useEffect(() => {
     scroller.scrollTo('water-goal-result', {
       duration: 800,
@@ -34,6 +34,6 @@ const WaterGoalResult = ({ waterML, waterLiters, glasses }) => {
       </ul>
     </div>
   );
-};
+}
 
 export default WaterGoalResult;

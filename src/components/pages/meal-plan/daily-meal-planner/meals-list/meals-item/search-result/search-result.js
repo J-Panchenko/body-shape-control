@@ -5,9 +5,7 @@ import { imgAdd } from '../../../../../../../images';
 import './search-result.css';
 import { calculateSumOfNutrients } from '../../../../../../../actions';
 
-const SearchResult = ({
-  foodName, carbohydrates, proteins, fats, calories, servingSize, addFunction,
-}) => {
+function SearchResult(props) {
   const [searchResult, setSearchResult] = useState({
     carbs: 0,
     protein: 0,
@@ -16,6 +14,9 @@ const SearchResult = ({
     portion: 0,
   });
   const dispatch = useDispatch();
+  const {
+    foodName, carbohydrates, proteins, fats, calories, servingSize, addFunction,
+  } = props;
 
   useEffect(() => {
     setSearchResult({
@@ -97,6 +98,6 @@ const SearchResult = ({
       </tbody>
     </table>
   );
-};
+}
 
 export default SearchResult;

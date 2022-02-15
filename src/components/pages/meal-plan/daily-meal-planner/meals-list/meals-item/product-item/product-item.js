@@ -2,7 +2,7 @@ import React from 'react';
 import { imgRemove } from '../../../../../../../images';
 import './product-item.css';
 
-const ProductItem = (props) => {
+function ProductItem(props) {
   const {
     id, foodName, carbs, protein, fat, kcal, portion, onClick,
   } = props;
@@ -42,6 +42,6 @@ const ProductItem = (props) => {
       </td>
     </tr>
   );
-};
+}
 
 export default ProductItem;

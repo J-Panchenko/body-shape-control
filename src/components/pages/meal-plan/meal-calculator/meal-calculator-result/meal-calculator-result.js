@@ -3,7 +3,7 @@ import { scroller } from 'react-scroll';
 import { energyValue } from '../../../../../constants';
 import './meal-calculator-result.css';
 
-const MealCalculatorResult = ({ ...props }) => {
+function MealCalculatorResult(props) {
   const {
     calories, protein, fat, carbo,
   } = props;
@@ -53,6 +53,6 @@ const MealCalculatorResult = ({ ...props }) => {
       </tbody>
     </table>
   );
-};
+}
 
 export default MealCalculatorResult;

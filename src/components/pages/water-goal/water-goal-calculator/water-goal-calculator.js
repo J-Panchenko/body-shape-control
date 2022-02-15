@@ -5,7 +5,7 @@ import { getWaterGoalInML, getWaterGoalInLiters, getGlassesOfWater } from '../..
 import { texts } from '../../../../data';
 import './water-goal-calculator.css';
 
-const WaterGoalCalculator = () => {
+function WaterGoalCalculator() {
   const [age, setAge] = useState(useSelector(({ userData: { userAge } }) => userAge));
   const [weight, setWeight] = useState(useSelector(({ userData: { userWeight } }) => userWeight));
   const [factor, setFactor] = useState(false);
@@ -135,6 +135,6 @@ const WaterGoalCalculator = () => {
       }
     </>
   );
-};
+}
 
 export default WaterGoalCalculator;

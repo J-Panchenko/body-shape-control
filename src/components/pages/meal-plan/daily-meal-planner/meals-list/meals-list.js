@@ -14,7 +14,7 @@ import { texts } from '../../../../../data';
 import MealsItem from './meals-item';
 import './meals-list.css';
 
-const MealsList = () => {
+function MealsList() {
   const productsBreakfast = useSelector((state) => state.meals.breakfast);
   const productsLunch = useSelector((state) => state.meals.lunch);
   const productsDinner = useSelector((state) => state.meals.dinner);
@@ -56,5 +56,6 @@ const MealsList = () => {
       </li>
     </ul>
   );
-};
+}
+
 export default MealsList;

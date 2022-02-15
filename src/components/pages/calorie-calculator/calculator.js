@@ -35,19 +35,19 @@ class Calculator extends Component {
     this.setState({
       gender: event.target.value,
     });
-  }
+  };
 
   onHeightChange = (event) => {
     this.setState({
       height: parseFloat(event.target.value),
     });
-  }
+  };
 
   onActivityChange = (event) => {
     this.setState({
       activityValue: parseFloat(event.target.value),
     });
-  }
+  };
 
   onCalculatorResult = (event) => {
     event.preventDefault();
@@ -68,13 +68,13 @@ class Calculator extends Component {
     forExtremeWeightLoss(extremeLoss);
     forNormalWeightGain(normalGain);
     forExtremeWeightGain(extremeGain);
-  }
+  };
 
   onClearCalculator = () => {
     const { onClearData } = this.props;
     this.setState(initialState);
     onClearData();
-  }
+  };
 
   render() {
     const {

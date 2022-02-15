@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { texts } from '../../../../../data';
 import './current-meal-plan.css';
 
-const CurrentMealPlan = () => {
+function CurrentMealPlan() {
   const [currentValues, setCurrentValues] = useState({
     carbs: 0,
     protein: 0,
@@ -56,6 +56,6 @@ const CurrentMealPlan = () => {
       </table>
     </div>
   );
-};
+}
 
 export default CurrentMealPlan;

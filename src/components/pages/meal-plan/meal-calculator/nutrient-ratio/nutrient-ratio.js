@@ -3,9 +3,10 @@ import React from 'react';
 import { nutrientRatio as ratio, texts } from '../../../../../data';
 import './nutrient-ratio.css';
 
-const NutrientRatio = ({
-  onRatioIdChange, onProteinChange, onFatChange, onCarboChange, error,
-}) => {
+function NutrientRatio(props) {
+  const {
+    onRatioIdChange, onProteinChange, onFatChange, onCarboChange, error,
+  } = props;
   const handleInputId = 3;
 
   const parseValue = (e) => {
@@ -95,6 +96,6 @@ const NutrientRatio = ({
       </li>
     </ul>
   );
-};
+}
 
 export default NutrientRatio;

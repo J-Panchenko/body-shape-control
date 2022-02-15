@@ -11,7 +11,7 @@ const errorMessage = {
   noCorrectly: <p className="error-message">{texts.errorMessage.foodNoCorrectly}</p>,
 };
 
-const SearchPanel = ({ getFood, addFunction }) => {
+function SearchPanel({ getFood, addFunction }) {
   const [productSearch, setProductSearch] = useState('');
   const [food, setFood] = useState('');
   const [kcal, setKcal] = useState(0);
@@ -113,7 +113,7 @@ const SearchPanel = ({ getFood, addFunction }) => {
       {(view) ? result : null}
     </div>
   );
-};
+}
 
 const mapMethodsToProps = (service) => ({
   getFood: service.getResultsOfSearch,

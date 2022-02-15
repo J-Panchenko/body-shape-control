@@ -8,13 +8,8 @@ export default class NinjasService {
     },
   };
 
-  onParsedString = (str) => {
-    const newString = str.toLowerCase().split(' ').join('%20');
-    return newString;
-  };
-
   getResource = async (food) => {
-    const requestedFood = this.onParsedString(food);
+    const requestedFood = food.toLowerCase().split(' ').join('%20');
     const result = await fetch(`${this.apiBase}${requestedFood}`, this.options);
 
     if (!result.ok) {
@@ -27,19 +22,14 @@ export default class NinjasService {
   };
 
   getResultsOfSearch = async (food) => {
-    const res = await this.getResource(food);
-    return res.map((item) => this.transformFood(item));
-  };
-
-  transformFood = (food) => {
-    const result = {
-      foodName: food.name,
-      calories: food.calories,
-      servingSize: food.serving_size_g,
-      protein: food.protein_g,
-      fat: food.fat_total_g,
-      carbohydrates: food.carbohydrates_total_g,
-    };
-    return result;
+    const searchFood = await this.getResource(food);
+    return searchFood.map((item) => ({
+      foodName: item.name,
+      calories: item.calories,
+      servingSize: item.serving_size_g,
+      protein: item.protein_g,
+      fat: item.fat_total_g,
+      carbohydrates: item.carbohydrates_total_g,
+    }));
   };
 }
