@@ -1,7 +1,7 @@
 import React from 'react';
 import './age.css';
 
-function Age({ age, onChange }) {
+function Age({ onChange }) {
   return (
     <label htmlFor="age" className="parameter__item">
       <h2 className="parameter-subtitle">Age</h2>
@@ -14,7 +14,6 @@ function Age({ age, onChange }) {
         min={15}
         max={100}
         step={1}
-        value={age}
         placeholder="0"
         onChange={onChange}
       />

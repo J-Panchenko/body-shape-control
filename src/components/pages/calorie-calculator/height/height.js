@@ -2,7 +2,7 @@ import React from 'react';
 
 import './height.css';
 
-function Height({ value, onHeightChange }) {
+function Height({ onHeightChange }) {
   return (
     <label htmlFor="height" className="parameter__item">
       <h2 className="parameter-subtitle">Height</h2>
@@ -15,7 +15,6 @@ function Height({ value, onHeightChange }) {
         min={60}
         max={260}
         step={0.1}
-        value={value}
         placeholder="0"
         onChange={onHeightChange}
       />

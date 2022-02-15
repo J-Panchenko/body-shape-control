@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
 import { changeServingSize } from '../../../../../../../models';
 import { imgAdd } from '../../../../../../../images';
 import './search-result.css';
@@ -17,6 +18,20 @@ function SearchResult(props) {
   const {
     foodName, carbohydrates, proteins, fats, calories, servingSize, addFunction,
   } = props;
+
+  SearchResult.propTypes = {
+    foodName: PropTypes.string.isRequired,
+    carbohydrates: PropTypes.number.isRequired,
+    proteins: PropTypes.number.isRequired,
+    fats: PropTypes.number.isRequired,
+    calories: PropTypes.number.isRequired,
+    servingSize: PropTypes.number,
+    addFunction: PropTypes.func.isRequired,
+  };
+
+  SearchResult.defaultProps = {
+    servingSize: 100,
+  };
 
   useEffect(() => {
     setSearchResult({

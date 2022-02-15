@@ -1,9 +1,16 @@
 import React, { useEffect } from 'react';
 import { scroller } from 'react-scroll';
+import PropTypes from 'prop-types';
 import { texts } from '../../../../data';
 import './water-goal-result.css';
 
 function WaterGoalResult({ waterML, waterLiters, glasses }) {
+  WaterGoalResult.propTypes = {
+    waterML: PropTypes.number.isRequired,
+    waterLiters: PropTypes.number.isRequired,
+    glasses: PropTypes.number.isRequired,
+  };
+
   useEffect(() => {
     scroller.scrollTo('water-goal-result', {
       duration: 800,
