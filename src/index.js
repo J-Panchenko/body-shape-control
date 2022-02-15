@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import ErrorBoundary from './components/error-boundary';
 import './index.css';
@@ -15,9 +15,9 @@ ReactDOM.render(
   <Provider store={store}>
     <ErrorBoundary>
       <NinjasServiceProvider value={ninjasService}>
-        <BrowserRouter>
+        <HashRouter>
           <App />
-        </BrowserRouter>
+        </HashRouter>
       </NinjasServiceProvider>
     </ErrorBoundary>
   </Provider>,
