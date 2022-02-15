@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import {
   getUserWeight, getUserAge,
   getExtremeWeightGain, getExtremeWeightLoss, getMaintainWeight,
@@ -20,7 +21,7 @@ import {
 
 const initialState = {
   gender: '',
-  height: '',
+  height: 0,
   activity: activities,
   activityValue: '',
 };
@@ -81,7 +82,7 @@ class Calculator extends Component {
       gender, height, activity, activityValue,
     } = this.state;
     const {
-      age, weight, onAgeChange, onWeightChange, userSelectedCalories, maintainWeight,
+      onAgeChange, onWeightChange, userSelectedCalories, maintainWeight,
     } = this.props;
 
     return (
@@ -95,9 +96,9 @@ class Calculator extends Component {
             onGenderChange={this.onGenderChange}
           />
           <div className="parameter">
-            <Age age={age} onChange={(e) => onAgeChange(parseFloat(e.target.value))} />
+            <Age onChange={(e) => onAgeChange(parseFloat(e.target.value))} />
             <Height value={height} onHeightChange={this.onHeightChange} />
-            <Weight weight={weight} onChange={(e) => onWeightChange(parseFloat(e.target.value))} />
+            <Weight onChange={(e) => onWeightChange(parseFloat(e.target.value))} />
           </div>
           <Activity
             activities={activity}
@@ -130,6 +131,28 @@ class Calculator extends Component {
     );
   }
 }
+
+Calculator.propTypes = {
+  age: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]).isRequired,
+  weight: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]).isRequired,
+  onAgeChange: PropTypes.func.isRequired,
+  onWeightChange: PropTypes.func.isRequired,
+  userSelectedCalories: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]),
+  maintainWeight: PropTypes.number.isRequired,
+};
+
+Calculator.defaultProps = {
+  userSelectedCalories: 0,
+};
 
 const mapStateToProps = ({
   userData: { userAge, userWeight, userCalories }, weightTarget: { maintainWeight },

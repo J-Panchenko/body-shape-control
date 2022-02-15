@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
 import { calculateSumOfNutrients } from '../../../../../../actions';
 import SearchPanel from './search-panel';
 import ProductItem from './product-item/product-item';
@@ -13,6 +14,25 @@ function MealsItem(props) {
   const {
     name, products, addFunction, removeFunction,
   } = props;
+
+  MealsItem.propTypes = {
+    name: PropTypes.string,
+    products: PropTypes.arrayOf(PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      foodName: PropTypes.string.isRequired,
+      carbs: PropTypes.number.isRequired,
+      protein: PropTypes.number.isRequired,
+      fat: PropTypes.number.isRequired,
+      kcal: PropTypes.number.isRequired,
+      portion: PropTypes.number.isRequired,
+    })).isRequired,
+    addFunction: PropTypes.func.isRequired,
+    removeFunction: PropTypes.func.isRequired,
+  };
+
+  MealsItem.defaultProps = {
+    name: 'Meal',
+  };
 
   const product = products.map((prod) => {
     const {
