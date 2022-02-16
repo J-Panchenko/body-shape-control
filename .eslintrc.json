@@ -36,6 +36,7 @@
 			}
 		],
 		"react/jsx-props-no-spreading": "off",
-		"quote-props": "off"
+		"quote-props": "off",
+		"jsx-a11y/label-has-associated-control": "off"
 	}
 }

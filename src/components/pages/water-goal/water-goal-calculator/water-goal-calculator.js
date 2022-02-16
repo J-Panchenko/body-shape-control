@@ -93,9 +93,8 @@ function WaterGoalCalculator() {
                 className="checkbox-factor"
                 onClick={onFactorChange}
               />
-              <label htmlFor="factor" className="checkbox-factor__label">
-                <span>{texts.waterGoal[2]}</span>
-              </label>
+              <label htmlFor="factor" className="checkbox-factor__label" />
+              <span>{texts.waterGoal[2]}</span>
             </div>
             <div className="calculator-button">
               <button
