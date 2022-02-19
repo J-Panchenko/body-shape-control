@@ -109,7 +109,6 @@ class Calculator extends Component {
             <button
               type="submit"
               className="button button-submit calculate-btn"
-            // Решить с disabled
             >
               Calculate
             </button>
@@ -117,7 +116,6 @@ class Calculator extends Component {
               type="button"
               className="button button-clear"
               onClick={this.onClearCalculator}
-            // Решить с disabled
             >
               Clear fields and calculation
             </button>
