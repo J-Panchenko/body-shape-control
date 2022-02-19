@@ -15,7 +15,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-image: url("images/vegetables.webp");
   background-color: #ebc244;
-  background-repeat: no-repeat;
+  background-repeat: repeat-y;
   background-size: cover;
   background-position: top;
   min-height: 100vh;
