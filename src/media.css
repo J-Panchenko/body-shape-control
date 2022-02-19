@@ -1,0 +1,130 @@
+@media(max-width: 700px) {
+  .section-container {
+    width: 98%;
+    padding: 30px;
+  }
+
+  .menu__link {
+    padding: 10px;
+  }
+
+  .parameter__item h2 {
+    margin-bottom: 10px;
+  }
+
+  .parameter__item span {
+    margin-bottom: 10px;
+  }
+
+  .calculator-result__result-msg {
+    top: 30px;
+    right: 30px;
+  }
+
+  .water-goal-result__text {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .water-goal-result__text::after {
+    right: -20px;
+    transform: rotate(150deg) scale(0.6);
+  }
+
+  .water-goal-result__description {
+    width: 90%;
+    justify-content: space-around;
+  }
+}
+
+@media(max-width: 555px) {
+  .section-container {
+    padding: 20px;
+  }
+  
+  .button-clear::before,
+  .button-clear::after {
+    left: 0;
+  }
+  
+  .button {
+    padding: 10px;
+  }
+  
+  .button-clear {
+    width: 50%;
+  }
+
+  .calculator-result__result-msg {
+    top: 15px;
+    right: 20px;
+  }
+
+  .calorie-value {
+    padding: 15px;
+  }
+
+  .calculator-result__item p {
+    font-size: smaller;
+  }
+  
+  .water-form {
+    column-gap: 20px;
+  }
+  
+  .nutrient-ratio__hundle {
+    gap: 15px;
+  }
+  
+  .parameter {
+    gap: 5px;
+  }
+  
+  .parameter-subtitle {
+    font-size: 24px;
+    line-height: 24px;
+    padding: 0 5px;
+    margin-bottom: 10px;
+  }
+
+  .parameter__item {
+    flex-direction: column;
+  }
+
+  .parameter__item h2 {
+    margin-bottom: 0px;
+  }
+
+  .parameter__item span {
+    margin-bottom: 0px;
+  }
+
+  .meals__item .table {
+    width: 95%;
+  }
+
+  .data-info .name-value {
+    min-width: 50px;
+    max-width: 80px;
+    word-wrap: break-word;
+    font-size: small;
+  }
+
+  .data-info .value {
+    font-size: small;
+  }
+
+  .meal__item-head .view-btn {
+    margin-right: 5px;
+  }
+
+  .checkbox-factor__label + span {
+    width: 80%;
+    bottom: 0;
+  }
+
+  .water-goal-result__text::after {
+    display: none;
+  }
+}
