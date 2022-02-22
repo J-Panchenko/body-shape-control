@@ -9,6 +9,7 @@ function Age({ onChange }) {
       <input
         type="number"
         className="input"
+        aria-label="age-input"
         required
         id="age"
         min={15}
