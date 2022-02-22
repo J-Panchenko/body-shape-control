@@ -10,6 +10,7 @@ function Height({ onHeightChange }) {
       <input
         type="number"
         className="input"
+        aria-label="height-input"
         required
         id="height"
         min={60}
