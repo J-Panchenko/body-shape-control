@@ -9,6 +9,7 @@ function Weight({ onChange }) {
       <input
         type="number"
         className="input"
+        aria-label="weight-input"
         required
         id="weight"
         min={20}

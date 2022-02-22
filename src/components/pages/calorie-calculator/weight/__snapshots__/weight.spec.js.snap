@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Weight component: positive cases It should be renders correctly 1`] = `
+<label
+  className="parameter__item"
+  htmlFor="weight"
+>
+  <h2
+    className="parameter-subtitle"
+  >
+    Weight
+  </h2>
+  <span>
+    kg
+  </span>
+  <input
+    aria-label="weight-input"
+    className="input"
+    id="weight"
+    max={500}
+    min={20}
+    placeholder="0"
+    required={true}
+    step={0.1}
+    type="number"
+  />
+</label>
+`;
