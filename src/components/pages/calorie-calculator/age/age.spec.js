@@ -1,4 +1,5 @@
 import { render, fireEvent } from '@testing-library/react';
+import { create } from 'react-test-renderer';
 import React from 'react';
 import Age from './age';
 
@@ -32,5 +33,10 @@ describe('Age component: positive cases', () => {
     fireEvent.change(input, { target: { value: '12' } });
     expect(input.value).toBe('12');
     expect(input.validity.stepMismatch).toBe(false);
+  });
+
+  it('It should be renders correctly', () => {
+    const renderer = create(<Age />);
+    expect(renderer.toJSON()).toMatchSnapshot();
   });
 });

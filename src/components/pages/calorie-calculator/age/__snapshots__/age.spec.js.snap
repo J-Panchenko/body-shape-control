@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Age component: positive cases It should be renders correctly 1`] = `
+<label
+  className="parameter__item"
+  htmlFor="age"
+>
+  <h2
+    className="parameter-subtitle"
+  >
+    Age
+  </h2>
+  <span>
+    years
+  </span>
+  <input
+    aria-label="age-input"
+    className="input"
+    id="age"
+    max={100}
+    min={15}
+    placeholder="0"
+    required={true}
+    step={1}
+    type="number"
+  />
+</label>
+`;
