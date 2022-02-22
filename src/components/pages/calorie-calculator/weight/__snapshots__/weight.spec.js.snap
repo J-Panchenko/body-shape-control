@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Weight component: positive cases It should be renders correctly 1`] = `
+exports[`Weight component: positive cases matches snapshot 1`] = `
 <label
   className="parameter__item"
   htmlFor="weight"

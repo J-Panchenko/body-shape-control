@@ -35,7 +35,7 @@ describe('Age component: positive cases', () => {
     expect(input.validity.stepMismatch).toBe(false);
   });
 
-  it('It should be renders correctly', () => {
+  it('matches snapshot', () => {
     const renderer = create(<Age />);
     expect(renderer.toJSON()).toMatchSnapshot();
   });

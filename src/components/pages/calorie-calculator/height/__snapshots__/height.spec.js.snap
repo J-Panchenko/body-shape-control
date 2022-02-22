@@ -1,33 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Height component: positive cases It should be empty input with placeholder 0 1`] = `
-<label
-  className="parameter__item"
-  htmlFor="height"
->
-  <h2
-    className="parameter-subtitle"
-  >
-    Height
-  </h2>
-  <span>
-    cm
-  </span>
-  <input
-    aria-label="height-input"
-    className="input"
-    id="height"
-    max={260}
-    min={60}
-    placeholder="0"
-    required={true}
-    step={0.1}
-    type="number"
-  />
-</label>
-`;
-
-exports[`Height component: positive cases It should be renders correctly 1`] = `
+exports[`Height component: positive cases matches snapshot 1`] = `
 <label
   className="parameter__item"
   htmlFor="height"
